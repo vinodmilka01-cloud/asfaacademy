@@ -6,7 +6,7 @@ import { ArrowRight, Trophy, Users, Heart } from "lucide-react";
 
 export const Hero = () => {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-900 pt-32 md:pt-20">
+        <section className="relative w-full bg-gray-900 pt-28 pb-20 md:pt-40 md:pb-32 lg:min-h-screen lg:flex lg:items-center lg:justify-center overflow-hidden">
             {/* Background with overlay */}
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-black/60 z-10" />
@@ -22,13 +22,13 @@ export const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+                        <h1 className="text-3xl sm:text-4xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
                             Empowering Every <span className="text-primary italic">Athlete</span> — From Grassroots to <span className="underline decoration-primary">Olympics</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-gray-100 mb-6 max-w-2xl leading-relaxed font-semibold">
+                        <p className="text-lg md:text-2xl text-gray-100 mb-6 max-w-2xl leading-relaxed font-semibold">
                             Identifying and nurturing talent from underserved communities across India. Sports is a fundamental right for all.
                         </p>
-                        <p className="text-lg md:text-xl text-primary mb-10 max-w-3xl leading-relaxed font-bold italic bg-black/40 inline-block px-6 py-3 rounded-xl border border-primary/30">
+                        <p className="text-base md:text-xl text-primary mb-10 max-w-3xl leading-relaxed font-bold italic bg-black/40 inline-block px-4 py-2 md:px-6 md:py-3 rounded-xl border border-primary/30">
                             We proudly train athletes who are blind, physically challenged, intellectually challenged, and who use wheelchairs.
                         </p>
                     </motion.div>
