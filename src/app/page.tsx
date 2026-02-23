@@ -4,6 +4,7 @@ import { VisionMission } from "@/components/VisionMission";
 import { Programs } from "@/components/Programs";
 import { FounderSpotlight } from "@/components/FounderSpotlight";
 import { Impact } from "@/components/Impact";
+import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
 import Link from "next/link";
 import { ArrowRight, Trophy } from "lucide-react";
@@ -71,6 +72,7 @@ export default function Home() {
 
         <FounderSpotlight />
         <Impact />
+        <ContactForm />
 
         {/* Call to Action */}
         <section className="py-24 bg-primary text-white text-center">

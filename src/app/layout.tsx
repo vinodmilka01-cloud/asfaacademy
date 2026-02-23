@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, Geist } from "next/font/google";
 import "./globals.css";
 import { AOSInit } from "@/components/AOSInit";
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -32,6 +33,7 @@ export default function RootLayout({
       >
         <AOSInit />
         {children}
+        <FloatingWhatsApp />
       </body>
     </html>
   );
