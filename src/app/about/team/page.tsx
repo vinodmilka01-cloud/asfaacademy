@@ -17,6 +17,16 @@ const team = [
         name: "Karamtoth Jithendar",
         role: "Treasury",
         image: "/karamtoth-jithendar.png"
+    },
+    {
+        name: "Nenavath Vijaya Lakshmi",
+        role: "Joint Secretary",
+        image: "/nenavath-vijaya-lakshmi.png"
+    },
+    {
+        name: "Nenavath Ganesh",
+        role: "Vice President",
+        image: "/nenavath-ganesh.png"
     }
 ];
 
