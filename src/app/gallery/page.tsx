@@ -143,10 +143,6 @@ export default function GalleryPage() {
                                     className="group relative rounded-3xl overflow-hidden cursor-pointer shadow-lg aspect-square"
                                 >
                                     <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
-                                        <span className="text-primary font-bold uppercase text-xs tracking-widest mb-2">{item.category}</span>
-                                        <h4 className="text-white font-bold text-xl italic">{item.title}</h4>
-                                    </div>
                                 </motion.div>
                             ))}
                         </AnimatePresence>
