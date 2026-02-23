@@ -29,7 +29,7 @@ const sportCategories = [
         title: "Deaflympics",
         description: "Creating opportunities for hearing-impaired athletes to excel in national and international competitions like the Deaflympics.",
         icon: Zap,
-        image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80",
+        image: "/deaflympics.png",
         color: "text-yellow-600",
         bg: "bg-yellow-50",
         features: ["Visual Coaching", "Inclusive Environment", "National Representation"]
