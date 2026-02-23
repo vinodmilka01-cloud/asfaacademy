@@ -12,7 +12,7 @@ export default function FounderPage() {
             <section className="pt-40 pb-20 bg-primary text-white relative overflow-hidden">
                 <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 items-center gap-12 relative z-10">
                     <div data-aos="fade-right">
-                        <span className="font-bold uppercase tracking-widest text-sm mb-4 block text-white/80">The Visionary</span>
+                        <span className="font-bold uppercase tracking-widest text-sm mb-4 block text-white/80">Founder & CEO, ASFA</span>
                         <h1 className="text-5xl md:text-7xl font-black mb-6 italic">Nenavath <br /> <span className="text-black">Vinod</span></h1>
                         <p className="text-xl md:text-2xl opacity-90 leading-relaxed mb-8 italic">
                             "Developing international-level athletes from the grassroots of Telangana."
@@ -26,7 +26,7 @@ export default function FounderPage() {
                     </div>
                     <div className="relative" data-aos="fade-left">
                         <div className="w-full aspect-square md:aspect-video rounded-3xl overflow-hidden shadow-2xl relative">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80" alt="Founder" className="w-full h-full object-cover" />
+                            <img src="/founder.png" alt="Founder" className="w-full h-full object-cover" />
                             <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
                         </div>
                         {/* Stats float */}

@@ -2,18 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { User, ShieldCheck, Mail } from "lucide-react";
 
-const team = [
-    { name: "Nenavath Vinod", role: "Founder & President" },
-    { name: "Nenavath Ganesh", role: "Vice President" },
-    { name: "Rajulapati Mamatha", role: "Vice President" },
-    { name: "Nenavath Vidya Lakshmi", role: "General Secretary" },
-    { name: "Lokavath Rajender", role: "Treasurer" },
-    { name: "Rajuvath Vijay", role: "Assistant Working Secretary" },
-    { name: "Nenavath Rajesh", role: "Chairman, Organizing Committee" },
-    { name: "Nenavath Naresh", role: "Member, Organizing Committee" },
-    { name: "Guluguwal Sagar", role: "Executive Member" },
-    { name: "Korra Rekha", role: "Chief Strategy Officer" },
-];
+const team: { name: string; role: string }[] = [];
 
 export default function TeamPage() {
     return (
@@ -58,6 +47,14 @@ export default function TeamPage() {
                             </div>
                         ))}
                     </div>
+
+                    {team.length === 0 && (
+                        <div className="py-20 text-center text-gray-400 italic">
+                            <User size={48} className="mx-auto mb-4 opacity-20" />
+                            <p className="text-xl font-bold text-gray-950 uppercase tracking-tighter">Board details will be updated here shortly.</p>
+                            <p className="mt-2">We are currently updating our visionary leadership team.</p>
+                        </div>
+                    )}
 
                 </div>
             </section>

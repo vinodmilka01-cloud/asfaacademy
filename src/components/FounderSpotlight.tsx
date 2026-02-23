@@ -13,14 +13,14 @@ export const FounderSpotlight = () => {
                         <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
                             {/* Using a placeholder for the founder's photo */}
                             <img
-                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80"
+                                src="/founder.png"
                                 alt="Nenavath Vinod"
                                 className="w-full aspect-[4/5] object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
                             <div className="absolute bottom-6 left-6 text-white">
                                 <p className="text-2xl font-bold">Nenavath Vinod</p>
-                                <p className="opacity-90">Founder & President, ASFA</p>
+                                <p className="opacity-90">Founder & CEO, ASFA</p>
                             </div>
                         </div>
                         {/* Decorative elements */}
