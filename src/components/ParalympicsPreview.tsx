@@ -33,7 +33,9 @@ export const ParalympicsPreview = () => {
                             </div>
                         </div>
 
-
+                        <Link href="/sports" className="inline-flex items-center gap-2 border-2 border-gray-950 text-gray-950 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-950 hover:text-white transition-all group">
+                            View Inclusive Programs <ArrowRight className="group-hover:translate-x-2 transition-transform" />
+                        </Link>
                     </div>
 
                     <div className="lg:w-1/2" data-aos="fade-right">
