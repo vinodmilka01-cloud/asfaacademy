@@ -13,7 +13,7 @@ export default function TeamPage() {
             <section className="pt-40 pb-20 bg-gray-50 text-center">
                 <div className="container mx-auto px-6">
                     <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">Our Team</span>
-                    <h1 className="text-5xl md:text-7xl font-black mb-6">Board of <span className="text-primary italic">Directors</span></h1>
+                    <h1 className="text-5xl md:text-7xl font-black mb-6 text-gray-950 italic uppercase tracking-tighter">Board of <span className="text-primary italic">Directors</span></h1>
                     <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
                         Leading the transformation of Indian sports with integrity and purpose.
                     </p>
