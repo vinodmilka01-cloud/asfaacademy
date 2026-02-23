@@ -79,15 +79,15 @@ export default function SportsPage() {
                                         alt={category.title}
                                         className="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105"
                                     />
-                                    <div className="absolute bottom-6 left-6 flex items-center gap-3 z-10">
+                                </div>
+
+                                <div className="p-8 flex flex-col flex-grow">
+                                    <div className="flex items-center gap-3 mb-6">
                                         <div className={`w-12 h-12 rounded-xl ${category.bg} ${category.color} flex items-center justify-center shadow-lg`}>
                                             <category.icon size={24} />
                                         </div>
                                         <h3 className="text-2xl font-black italic uppercase tracking-wide text-black">{category.title}</h3>
                                     </div>
-                                </div>
-
-                                <div className="p-8 flex flex-col flex-grow">
                                     <p className="text-gray-600 leading-relaxed mb-8 font-medium">
                                         {category.description}
                                     </p>
