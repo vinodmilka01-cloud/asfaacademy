@@ -25,8 +25,11 @@ export const Hero = () => {
                         <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
                             Empowering Every <span className="text-primary italic">Athlete</span> — From Grassroots to <span className="underline decoration-primary">Olympics</span>
                         </h1>
-                        <p className="text-xl md:text-2xl text-gray-100 mb-10 max-w-2xl leading-relaxed font-semibold">
+                        <p className="text-xl md:text-2xl text-gray-100 mb-6 max-w-2xl leading-relaxed font-semibold">
                             Identifying and nurturing talent from underserved communities across India. Sports is a fundamental right for all.
+                        </p>
+                        <p className="text-lg md:text-xl text-primary mb-10 max-w-3xl leading-relaxed font-bold italic bg-black/40 inline-block px-6 py-3 rounded-xl border border-primary/30">
+                            We proudly train athletes who are blind, physically challenged, intellectually challenged, and who use wheelchairs.
                         </p>
                     </motion.div>
 
