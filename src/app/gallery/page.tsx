@@ -124,12 +124,6 @@ const galleryItems: GalleryItem[] = [
         img: "/district-5.png"
     },
     {
-        id: "district-6",
-        category: "district",
-        title: "District Medalist",
-        img: "/district-6.png"
-    },
-    {
         id: "district-7",
         category: "district",
         title: "District Medalist",
