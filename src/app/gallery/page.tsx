@@ -26,6 +26,12 @@ const galleryItems: GalleryItem[] = [
         category: "memories",
         title: "ASFA Training Session",
         img: "/memories-1.png"
+    },
+    {
+        id: "memory-2",
+        category: "memories",
+        title: "Team Excellence",
+        img: "/memories-2.png"
     }
 ];
 
