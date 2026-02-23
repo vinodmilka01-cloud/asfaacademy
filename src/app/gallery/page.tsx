@@ -15,45 +15,6 @@ const categories = [
 const galleryItems = [
     { id: "m1", category: "memories", title: "Rural Coaching Camp", img: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80" },
     { id: "m2", category: "memories", title: "Wheelchair Training Session", img: "https://images.unsplash.com/photo-1444491741275-3747c33cc99b?auto=format&fit=crop&q=80" },
-
-    // National Medalists
-    { id: "n1", category: "national", title: "Korra Akhila", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "n2", category: "national", title: "Nenavath Vijaya Lakshmi", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "n3", category: "national", title: "Karamtoth Jithender", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "n4", category: "national", title: "N. Ganesh", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "n5", category: "national", title: "M. Sai Baba", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "n6", category: "national", title: "D. Yaswanth (T20)", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "n7", category: "national", title: "Prasanth", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "n8", category: "national", title: "Revathi", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "n9", category: "national", title: "Kalyani", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "n10", category: "national", title: "Lavanya", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "n11", category: "national", title: "G. Vinay", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "n12", category: "national", title: "P. Subbu", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "n13", category: "national", title: "Charan", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "n14", category: "national", title: "N. Mahesh", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "n15", category: "national", title: "E. Nithin Nayak", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-
-    // State Medalists
-    { id: "sm1", category: "state", title: "Vankunavath Revanth", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "sm2", category: "state", title: "Mudavath Vijay", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "sm3", category: "state", title: "Banavath Naresh", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "sm4", category: "state", title: "Sabavath Rajesh", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "sm5", category: "state", title: "Gujjunuri Sagar", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "sm6", category: "state", title: "R. Harsha", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "sm7", category: "state", title: "N. Shiva", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "sm8", category: "state", title: "D. Mohan Kumar", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "sm9", category: "state", title: "H. Akhil", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "sm10", category: "state", title: "R. Manish", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "sm11", category: "state", title: "R. Visesh", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "sm12", category: "state", title: "Charan", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "sm13", category: "state", title: "V. Sharath", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "sm14", category: "state", title: "J. Harish", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "sm15", category: "state", title: "Bunny", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "sm16", category: "state", title: "H. Akash", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "sm17", category: "state", title: "B. Jushua", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "sm18", category: "state", title: "B. Thiran", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "sm19", category: "state", title: "K. Maheswari", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
-    { id: "sm20", category: "state", title: "N. Anuradha", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
 ];
 
 export default function GalleryPage() {
