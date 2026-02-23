@@ -38,6 +38,7 @@ const navLinks = [
             { name: "Deaflympics", href: "/deaflympics" },
         ],
     },
+    { name: "Contact Us", href: "/contact" },
 ];
 
 export const Navbar = () => {
