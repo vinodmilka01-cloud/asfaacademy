@@ -152,7 +152,7 @@ export default function SportsPage() {
                         >
                             <div className="rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
                                 <img
-                                    src="https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80"
+                                    src="/door-to-door.jpg"
                                     alt="Inclusive sports excellence"
                                     className="w-full aspect-[4/3] object-cover"
                                 />
