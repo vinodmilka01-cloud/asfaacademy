@@ -48,6 +48,7 @@ export const Footer = () => {
                             <li><Link href="/gallery" className="hover:text-primary transition-colors">Champion Gallery</Link></li>
                             <li><Link href="/olympics" className="hover:text-primary transition-colors">Olympic Road</Link></li>
                             <li><Link href="/paralympics" className="hover:text-primary transition-colors">Inclusive Sports</Link></li>
+                            <li><Link href="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
                         </ul>
                     </div>
 

@@ -11,8 +11,8 @@ export default function ContactPage() {
             <section className="pt-40 pb-20 bg-gray-50 text-center text-gray-950">
                 <div className="container mx-auto px-6">
                     <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">Connect with ASFA</span>
-                    <h1 className="text-5xl md:text-7xl font-black mb-6 italic uppercase tracking-tighter text-gray-950">Contact <span className="text-primary italic">Us</span></h1>
-                    <p className="text-xl text-gray-950 max-w-2xl mx-auto italic font-black">
+                    <h1 className="text-5xl md:text-7xl font-black mb-6 italic uppercase tracking-tighter text-gray-900">Contact <span className="text-primary italic">Us</span></h1>
+                    <p className="text-xl text-gray-700 max-w-2xl mx-auto italic font-black">
                         Whether you are an aspiring athlete, a donor, or a volunteer, we'd love to hear from you.
                     </p>
                 </div>
@@ -24,15 +24,15 @@ export default function ContactPage() {
                         {/* Info Column */}
                         <div className="lg:w-1/3 space-y-12" data-aos="fade-right">
                             <div>
-                                <h3 className="text-2xl font-black mb-8 italic uppercase tracking-tighter text-gray-950 border-b-2 border-primary pb-2 inline-block">Stay In <span className="text-primary italic">Touch</span></h3>
+                                <h3 className="text-2xl font-black mb-8 italic uppercase tracking-tighter text-gray-900 border-b-2 border-primary pb-2 inline-block">Stay In <span className="text-primary italic">Touch</span></h3>
                                 <div className="space-y-8">
                                     <div className="flex gap-6 items-start">
                                         <div className="w-12 h-12 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
                                             <MapPin size={24} />
                                         </div>
                                         <div>
-                                            <h4 className="font-black text-lg mb-1 uppercase tracking-tight text-gray-950">Our Location</h4>
-                                            <p className="text-gray-950 italic font-bold">Hayathnagar, Hyderabad,<br />Telangana, India.</p>
+                                            <h4 className="font-black text-lg mb-1 uppercase tracking-tight text-gray-900">Our Location</h4>
+                                            <p className="text-gray-700 italic font-bold">Hayathnagar, Hyderabad,<br />Telangana, India.</p>
                                         </div>
                                     </div>
 
@@ -41,8 +41,8 @@ export default function ContactPage() {
                                             <Phone size={24} />
                                         </div>
                                         <div>
-                                            <h4 className="font-black text-lg mb-1 uppercase tracking-tight text-gray-950">Call Us</h4>
-                                            <p className="text-gray-950 italic font-bold">+91 82978 27196<br />+91 86875 37688</p>
+                                            <h4 className="font-black text-lg mb-1 uppercase tracking-tight text-gray-900">Call Us</h4>
+                                            <p className="text-gray-700 italic font-bold">+91 82978 27196<br />+91 86875 37688</p>
                                         </div>
                                     </div>
 
@@ -51,8 +51,8 @@ export default function ContactPage() {
                                             <Mail size={24} />
                                         </div>
                                         <div>
-                                            <h4 className="font-black text-lg mb-1 uppercase tracking-tight text-gray-950">Email Us</h4>
-                                            <p className="text-gray-950 italic font-bold break-all">academysportsandfinearts<br />@gmail.com</p>
+                                            <h4 className="font-black text-lg mb-1 uppercase tracking-tight text-gray-900">Email Us</h4>
+                                            <p className="text-gray-700 italic font-bold break-all">academysportsandfinearts<br />@gmail.com</p>
                                         </div>
                                     </div>
                                 </div>
