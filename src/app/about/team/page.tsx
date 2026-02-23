@@ -2,7 +2,13 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { User, ShieldCheck, Mail } from "lucide-react";
 
-const team: { name: string; role: string }[] = [];
+const team = [
+    {
+        name: "Korra Akhila",
+        role: "Static Sick Officer",
+        image: "/korra-akhila.png"
+    }
+];
 
 export default function TeamPage() {
     return (
@@ -27,20 +33,30 @@ export default function TeamPage() {
                         {team.map((member, index) => (
                             <div
                                 key={member.name}
-                                className="group relative bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:bg-white hover:shadow-2xl hover:border-primary/20 transition-all duration-300"
+                                className="group relative bg-gray-50 rounded-[2.5rem] p-8 border border-gray-100 hover:bg-white hover:shadow-2xl hover:border-primary/20 transition-all duration-300 overflow-hidden"
                                 data-aos="fade-up"
                                 data-aos-delay={index * 50}
                             >
                                 <div className="flex flex-col items-center">
-                                    <div className="w-24 h-24 rounded-full bg-primary/5 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
-                                        <User size={40} />
+                                    <div className="w-48 h-48 rounded-3xl overflow-hidden mb-6 group-hover:scale-105 transition-transform shadow-lg border-4 border-white bg-white">
+                                        {member.image ? (
+                                            <img
+                                                src={member.image}
+                                                alt={member.name}
+                                                className="w-full h-full object-cover object-top"
+                                            />
+                                        ) : (
+                                            <div className="w-full h-full bg-primary/5 flex items-center justify-center text-primary">
+                                                <User size={60} />
+                                            </div>
+                                        )}
                                     </div>
-                                    <h3 className="text-2xl font-bold text-gray-900 text-center mb-1 italic uppercase tracking-wide">{member.name}</h3>
+                                    <h3 className="text-2xl font-black text-gray-900 text-center mb-1 italic uppercase tracking-tighter">{member.name}</h3>
                                     <p className="text-primary font-bold uppercase text-xs tracking-widest mb-6 opacity-80">{member.role}</p>
 
-                                    <div className="w-full pt-6 border-t border-gray-200 flex justify-center gap-4">
-                                        <span className="text-xs text-gray-400 font-medium flex items-center gap-1">
-                                            <ShieldCheck size={14} className="text-green-500" /> Executive Board
+                                    <div className="w-full pt-6 border-t border-gray-100 flex justify-center gap-4">
+                                        <span className="text-[10px] text-gray-400 font-black uppercase tracking-widest flex items-center gap-1">
+                                            <ShieldCheck size={14} className="text-primary" /> Board Member
                                         </span>
                                     </div>
                                 </div>
@@ -49,10 +65,10 @@ export default function TeamPage() {
                     </div>
 
                     {team.length === 0 && (
-                        <div className="py-20 text-center text-gray-400 italic">
+                        <div className="py-20 text-center text-gray-900 italic">
                             <User size={48} className="mx-auto mb-4 opacity-20" />
-                            <p className="text-xl font-bold text-gray-950 uppercase tracking-tighter">Board details will be updated here shortly.</p>
-                            <p className="mt-2">We are currently updating our visionary leadership team.</p>
+                            <p className="text-xl font-black text-gray-950 uppercase tracking-tighter">Board details will be updated here shortly.</p>
+                            <p className="mt-2 font-bold opacity-80 uppercase tracking-widest text-xs">We are currently updating our visionary leadership team.</p>
                         </div>
                     )}
 
