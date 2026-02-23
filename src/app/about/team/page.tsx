@@ -7,6 +7,16 @@ const team = [
         name: "Korra Akhila",
         role: "Static Sick Officer",
         image: "/korra-akhila.png"
+    },
+    {
+        name: "S. Sagar",
+        role: "Compitition Director",
+        image: "/s-sagar.png"
+    },
+    {
+        name: "Karamtoth Jithendar",
+        role: "Treasury",
+        image: "/karamtoth-jithendar.png"
     }
 ];
 
