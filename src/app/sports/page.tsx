@@ -20,7 +20,7 @@ const sportCategories = [
         title: "Paralympics",
         description: "Empowering differently-abled athletes through specialized training and adaptive equipment. Our door-to-door model brings sports to every home.",
         icon: Accessibility,
-        image: "https://images.unsplash.com/photo-1444491741275-3747c33cc99b?auto=format&fit=crop&q=80",
+        image: "/paralympics.png",
         color: "text-primary",
         bg: "bg-primary/5",
         features: ["Home-Based Training", "Inclusive Facilities", "Para-Athletics Focus"]
