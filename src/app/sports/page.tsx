@@ -79,8 +79,7 @@ export default function SportsPage() {
                                         alt={category.title}
                                         className="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-950/60 via-transparent to-transparent" />
-                                    <div className="absolute bottom-6 left-6 flex items-center gap-3">
+                                    <div className="absolute top-6 left-6 flex items-center gap-3 z-10">
                                         <div className={`w-12 h-12 rounded-xl ${category.bg} ${category.color} flex items-center justify-center shadow-lg`}>
                                             <category.icon size={24} />
                                         </div>
