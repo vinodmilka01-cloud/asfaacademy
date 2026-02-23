@@ -8,36 +8,31 @@ import Link from "next/link";
 
 const sportCategories = [
     {
-        title: "Olympic Pathway",
+        title: "Olympics",
         description: "Identifying and nurturing elite talent for the world's biggest sporting stage. We bridge the gap from local grounds to the Olympic podium.",
         icon: Trophy,
+        image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80",
         color: "text-blue-600",
         bg: "bg-blue-50",
         features: ["Elite Coaching", "International Standards", "Systematic Preparation"]
     },
     {
-        title: "Para-Sports & Accessibility",
+        title: "Paralympics",
         description: "Empowering differently-abled athletes through specialized training and adaptive equipment. Our door-to-door model brings sports to every home.",
         icon: Accessibility,
+        image: "https://images.unsplash.com/photo-1444491741275-3747c33cc99b?auto=format&fit=crop&q=80",
         color: "text-primary",
         bg: "bg-primary/5",
         features: ["Home-Based Training", "Inclusive Facilities", "Para-Athletics Focus"]
     },
     {
-        title: "Deaf Sports",
+        title: "Deaflympics",
         description: "Creating opportunities for hearing-impaired athletes to excel in national and international competitions like the Deaflympics.",
         icon: Zap,
+        image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80",
         color: "text-yellow-600",
         bg: "bg-yellow-50",
         features: ["Visual Coaching", "Inclusive Environment", "National Representation"]
-    },
-    {
-        title: "Rural & Tribal Talent",
-        description: "Scouting for raw talent in the most underserved tribal and rural areas of India, providing them a highway to success.",
-        icon: Map,
-        color: "text-green-600",
-        bg: "bg-green-50",
-        features: ["Grassroots Scouting", "Scholarship Support", "Career Placement"]
     }
 ];
 
@@ -68,30 +63,43 @@ export default function SportsPage() {
             {/* Categories Grid */}
             <section className="py-24 bg-white">
                 <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                         {sportCategories.map((category, index) => (
                             <motion.div
                                 key={category.title}
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="group relative p-10 rounded-[2.5rem] border border-gray-100 bg-white hover:shadow-2xl transition-all overflow-hidden"
+                                className="group flex flex-col h-full rounded-[2.5rem] border border-gray-100 bg-white hover:shadow-2xl transition-all overflow-hidden"
                             >
-                                <div className={`w-16 h-16 rounded-2xl ${category.bg} ${category.color} flex items-center justify-center mb-8 group-hover:scale-110 transition-transform`}>
-                                    <category.icon size={32} />
-                                </div>
-                                <h3 className="text-3xl font-black mb-4 italic uppercase tracking-wide text-gray-900">{category.title}</h3>
-                                <p className="text-gray-600 text-lg leading-relaxed mb-8 font-medium">
-                                    {category.description}
-                                </p>
-                                <div className="space-y-3">
-                                    {category.features.map(feature => (
-                                        <div key={feature} className="flex items-center gap-3">
-                                            <ShieldCheck className="text-primary" size={20} />
-                                            <span className="font-bold text-gray-800 uppercase tracking-widest text-xs">{feature}</span>
+                                <div className="relative h-64 overflow-hidden">
+                                    <img
+                                        src={category.image}
+                                        alt={category.title}
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
+                                    <div className="absolute bottom-6 left-6 flex items-center gap-3">
+                                        <div className={`w-12 h-12 rounded-xl ${category.bg} ${category.color} flex items-center justify-center shadow-lg`}>
+                                            <category.icon size={24} />
                                         </div>
-                                    ))}
+                                        <h3 className="text-2xl font-black italic uppercase tracking-wide text-white">{category.title}</h3>
+                                    </div>
+                                </div>
+
+                                <div className="p-8 flex flex-col flex-grow">
+                                    <p className="text-gray-600 leading-relaxed mb-8 font-medium">
+                                        {category.description}
+                                    </p>
+                                    <div className="space-y-4 mt-auto">
+                                        {category.features.map(feature => (
+                                            <div key={feature} className="flex items-center gap-3">
+                                                <ShieldCheck className="text-primary" size={18} />
+                                                <span className="font-bold text-gray-800 uppercase tracking-widest text-[10px]">{feature}</span>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             </motion.div>
                         ))}
@@ -145,8 +153,8 @@ export default function SportsPage() {
                         >
                             <div className="rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
                                 <img
-                                    src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80"
-                                    alt="Sports training at ASFA"
+                                    src="https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80"
+                                    alt="Inclusive sports excellence"
                                     className="w-full aspect-[4/3] object-cover"
                                 />
                             </div>
