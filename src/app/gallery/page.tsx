@@ -50,6 +50,12 @@ const galleryItems: GalleryItem[] = [
         category: "memories",
         title: "Championship Moments",
         img: "/memories-5.png"
+    },
+    {
+        id: "memory-6",
+        category: "memories",
+        title: "Growth & Discipline",
+        img: "/memories-6.png"
     }
 ];
 
