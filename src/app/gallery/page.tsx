@@ -10,14 +10,12 @@ const categories = [
     { id: "all", name: "All Memories", icon: Camera },
     { id: "national", name: "National Medalists", icon: Trophy },
     { id: "state", name: "State Medalists", icon: Trophy },
-    { id: "activities", name: "Activities", icon: Users },
+    { id: "memories", name: "Memories", icon: Users },
 ];
 
 const galleryItems = [
-    { id: "s1", category: "state", title: "State Level Athletics Meet", img: "https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80" },
-    { id: "a1", category: "activities", title: "Rural Coaching Camp", img: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80" },
-    { id: "s2", category: "state", title: "Inter-District Games", img: "https://images.unsplash.com/photo-1533560271118-23fc71d1a501?auto=format&fit=crop&q=80" },
-    { id: "a2", category: "activities", title: "Wheelchair Training Session", img: "https://images.unsplash.com/photo-1444491741275-3747c33cc99b?auto=format&fit=crop&q=80" },
+    { id: "m1", category: "memories", title: "Rural Coaching Camp", img: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80" },
+    { id: "m2", category: "memories", title: "Wheelchair Training Session", img: "https://images.unsplash.com/photo-1444491741275-3747c33cc99b?auto=format&fit=crop&q=80" },
 
     // National Medalists
     { id: "n1", category: "national", title: "Korra Akhila", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
@@ -35,6 +33,28 @@ const galleryItems = [
     { id: "n13", category: "national", title: "Charan", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
     { id: "n14", category: "national", title: "N. Mahesh", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
     { id: "n15", category: "national", title: "E. Nithin Nayak", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+
+    // State Medalists
+    { id: "sm1", category: "state", title: "Vankunavath Revanth", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "sm2", category: "state", title: "Mudavath Vijay", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "sm3", category: "state", title: "Banavath Naresh", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "sm4", category: "state", title: "Sabavath Rajesh", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "sm5", category: "state", title: "Gujjunuri Sagar", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "sm6", category: "state", title: "R. Harsha", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "sm7", category: "state", title: "N. Shiva", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "sm8", category: "state", title: "D. Mohan Kumar", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "sm9", category: "state", title: "H. Akhil", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "sm10", category: "state", title: "R. Manish", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "sm11", category: "state", title: "R. Visesh", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "sm12", category: "state", title: "Charan", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "sm13", category: "state", title: "V. Sharath", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "sm14", category: "state", title: "J. Harish", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "sm15", category: "state", title: "Bunny", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "sm16", category: "state", title: "H. Akash", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "sm17", category: "state", title: "B. Jushua", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "sm18", category: "state", title: "B. Thiran", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "sm19", category: "state", title: "K. Maheswari", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "sm20", category: "state", title: "N. Anuradha", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
 ];
 
 export default function GalleryPage() {
