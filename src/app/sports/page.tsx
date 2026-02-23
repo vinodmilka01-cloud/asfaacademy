@@ -84,7 +84,7 @@ export default function SportsPage() {
                                         <div className={`w-12 h-12 rounded-xl ${category.bg} ${category.color} flex items-center justify-center shadow-lg`}>
                                             <category.icon size={24} />
                                         </div>
-                                        <h3 className="text-2xl font-black italic uppercase tracking-wide text-white">{category.title}</h3>
+                                        <h3 className="text-2xl font-black italic uppercase tracking-wide text-blue-600">{category.title}</h3>
                                     </div>
                                 </div>
 
