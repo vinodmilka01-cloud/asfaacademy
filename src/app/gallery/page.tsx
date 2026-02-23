@@ -20,7 +20,14 @@ interface GalleryItem {
     img: string;
 }
 
-const galleryItems: GalleryItem[] = [];
+const galleryItems: GalleryItem[] = [
+    {
+        id: "memory-1",
+        category: "memories",
+        title: "ASFA Training Session",
+        img: "/memories-1.png"
+    }
+];
 
 export default function GalleryPage() {
     const [activeCategory, setActiveCategory] = useState("national");
