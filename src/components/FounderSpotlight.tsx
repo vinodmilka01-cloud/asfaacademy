@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Award, BookOpen, Heart } from "lucide-react";
 
 export const FounderSpotlight = () => {
@@ -70,9 +71,12 @@ export const FounderSpotlight = () => {
                             </div>
                         </div>
 
-                        <button className="mt-12 bg-gray-900 border border-gray-100 hover:bg-gray-800 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg">
+                        <Link
+                            href="/about/founder"
+                            className="inline-block mt-12 bg-gray-900 border border-gray-100 hover:bg-gray-800 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg text-center"
+                        >
                             Read More About Vinod
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </div>

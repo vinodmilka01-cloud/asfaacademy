@@ -7,7 +7,6 @@ import { Search, Filter, Camera, Trophy, Users } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const categories = [
-    { id: "all", name: "All Memories", icon: Camera },
     { id: "national", name: "National Medalists", icon: Trophy },
     { id: "state", name: "State Medalists", icon: Trophy },
     { id: "memories", name: "Memories", icon: Users },
@@ -58,11 +57,9 @@ const galleryItems = [
 ];
 
 export default function GalleryPage() {
-    const [activeCategory, setActiveCategory] = useState("all");
+    const [activeCategory, setActiveCategory] = useState("national");
 
-    const filteredItems = activeCategory === "all"
-        ? galleryItems
-        : galleryItems.filter(item => item.category === activeCategory);
+    const filteredItems = galleryItems.filter(item => item.category === activeCategory);
 
     return (
         <main className="min-h-screen">
