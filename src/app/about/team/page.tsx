@@ -42,6 +42,11 @@ const team = [
         name: "Vankunavath Revanth",
         role: "Secretary",
         image: "/vankunavath-revanth.png"
+    },
+    {
+        name: "Mudavath Vijay",
+        role: "President of the Organizing Committee",
+        image: "/mudavath-vijay.png"
     }
 ];
 
