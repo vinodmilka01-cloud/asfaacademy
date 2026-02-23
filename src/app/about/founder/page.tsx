@@ -25,21 +25,9 @@ export default function FounderPage() {
                         </div>
                     </div>
                     <div className="relative" data-aos="fade-left">
-                        <div className="w-full aspect-square md:aspect-video rounded-3xl overflow-hidden shadow-2xl relative">
-                            <img src="/founder.png" alt="Founder" className="w-full h-full object-cover" />
+                        <div className="w-full aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl relative">
+                            <img src="/founder.png" alt="Founder" className="w-full h-full object-cover object-top" />
                             <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
-                        </div>
-                        {/* Stats float */}
-                        <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-2xl border border-gray-100 hidden md:block z-20">
-                            <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                                    <Award size={24} />
-                                </div>
-                                <div>
-                                    <p className="text-black font-bold">Level-1 Coach</p>
-                                    <p className="text-xs text-gray-500">International Athletics</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
