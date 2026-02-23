@@ -15,7 +15,7 @@ export const FounderSpotlight = () => {
                             <img
                                 src="/founder.png"
                                 alt="Nenavath Vinod"
-                                className="w-full aspect-[4/5] object-cover"
+                                className="w-full aspect-[4/5] object-cover object-top"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
                             <div className="absolute bottom-6 left-6 text-white">
