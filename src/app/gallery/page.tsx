@@ -158,6 +158,54 @@ const galleryItems: GalleryItem[] = [
         category: "district",
         title: "District Medalist",
         img: "/district-11.png"
+    },
+    {
+        id: "district-12",
+        category: "district",
+        title: "District Medalist",
+        img: "/district-12.png"
+    },
+    {
+        id: "district-13",
+        category: "district",
+        title: "District Medalist",
+        img: "/district-13.png"
+    },
+    {
+        id: "district-14",
+        category: "district",
+        title: "District Medalist",
+        img: "/district-14.png"
+    },
+    {
+        id: "district-15",
+        category: "district",
+        title: "District Medalist",
+        img: "/district-15.png"
+    },
+    {
+        id: "district-16",
+        category: "district",
+        title: "District Medalist",
+        img: "/district-16.png"
+    },
+    {
+        id: "district-17",
+        category: "district",
+        title: "District Medalist",
+        img: "/district-17.png"
+    },
+    {
+        id: "district-18",
+        category: "district",
+        title: "District Medalist",
+        img: "/district-18.png"
+    },
+    {
+        id: "district-19",
+        category: "district",
+        title: "District Medalist",
+        img: "/district-19.png"
     }
 ];
 
