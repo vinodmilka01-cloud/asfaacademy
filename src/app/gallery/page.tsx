@@ -12,10 +12,14 @@ const categories = [
     { id: "memories", name: "Memories", icon: Users },
 ];
 
-const galleryItems = [
-    { id: "m1", category: "memories", title: "Rural Coaching Camp", img: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80" },
-    { id: "m2", category: "memories", title: "Wheelchair Training Session", img: "https://images.unsplash.com/photo-1444491741275-3747c33cc99b?auto=format&fit=crop&q=80" },
-];
+interface GalleryItem {
+    id: string;
+    category: string;
+    title: string;
+    img: string;
+}
+
+const galleryItems: GalleryItem[] = [];
 
 export default function GalleryPage() {
     const [activeCategory, setActiveCategory] = useState("national");
