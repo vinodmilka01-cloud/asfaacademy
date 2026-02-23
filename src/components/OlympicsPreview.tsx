@@ -31,9 +31,7 @@ export const OlympicsPreview = () => {
                             </div>
                         </div>
 
-                        <Link href="/olympics" className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-primary-dark transition-all shadow-xl group">
-                            Full Olympic Mission <ArrowRight className="group-hover:translate-x-2 transition-transform" />
-                        </Link>
+
                     </div>
 
                     <div className="lg:w-1/2" data-aos="fade-left">

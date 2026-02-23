@@ -22,22 +22,6 @@ const navLinks = [
         ],
     },
     { name: "Gallery", href: "/gallery" },
-    {
-        name: "Olympics",
-        href: "/olympics",
-        sublinks: [
-            { name: "Olympics", href: "/olympics" },
-            { name: "Junior Athletes", href: "/junior-athletes" },
-        ],
-    },
-    {
-        name: "Paralympics",
-        href: "/paralympics",
-        sublinks: [
-            { name: "Para Athlete", href: "/paralympics" },
-            { name: "Deaflympics", href: "/deaflympics" },
-        ],
-    },
     { name: "Contact Us", href: "/contact" },
 ];
 
