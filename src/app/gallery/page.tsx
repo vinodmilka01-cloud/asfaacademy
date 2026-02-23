@@ -9,6 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const categories = [
     { id: "national", name: "National Medalists", icon: Trophy },
     { id: "state", name: "State Medalists", icon: Trophy },
+    { id: "district", name: "District Medalists", icon: Trophy },
     { id: "memories", name: "Memories", icon: Users },
 ];
 
