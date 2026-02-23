@@ -56,6 +56,18 @@ const galleryItems: GalleryItem[] = [
         category: "memories",
         title: "Growth & Discipline",
         img: "/memories-6.png"
+    },
+    {
+        id: "memory-7",
+        category: "memories",
+        title: "Community of Champions",
+        img: "/memories-7.png"
+    },
+    {
+        id: "memory-8",
+        category: "memories",
+        title: "Sportsman Spirit",
+        img: "/memories-8.png"
     }
 ];
 
