@@ -11,7 +11,7 @@ const sportCategories = [
         title: "Olympics",
         description: "Identifying and nurturing elite talent for the world's biggest sporting stage. We bridge the gap from local grounds to the Olympic podium.",
         icon: Trophy,
-        image: "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80",
+        image: "/olympics.png",
         color: "text-blue-600",
         bg: "bg-blue-50",
         features: ["Elite Coaching", "International Standards", "Systematic Preparation"]
