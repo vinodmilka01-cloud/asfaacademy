@@ -73,13 +73,13 @@ export default function SportsPage() {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className="group flex flex-col h-full rounded-[2.5rem] border border-gray-100 bg-white hover:shadow-2xl transition-all overflow-hidden"
                             >
-                                <div className="relative h-64 overflow-hidden">
+                                <div className="relative h-64 overflow-hidden bg-white flex items-center justify-center p-6">
                                     <img
                                         src={category.image}
                                         alt={category.title}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        className="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-gray-950/60 via-transparent to-transparent" />
                                     <div className="absolute bottom-6 left-6 flex items-center gap-3">
                                         <div className={`w-12 h-12 rounded-xl ${category.bg} ${category.color} flex items-center justify-center shadow-lg`}>
                                             <category.icon size={24} />
