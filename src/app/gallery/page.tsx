@@ -80,7 +80,7 @@ export default function GalleryPage() {
             </section>
 
             {/* Filter System */}
-            <section className="py-12 bg-white sticky top-20 z-30 shadow-sm border-b border-gray-100">
+            <section className="py-12 bg-white border-b border-gray-100">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                         {categories.map((cat) => (
