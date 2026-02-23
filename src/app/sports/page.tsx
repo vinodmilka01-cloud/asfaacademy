@@ -73,11 +73,11 @@ export default function SportsPage() {
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 className="group flex flex-col h-full rounded-[2.5rem] border border-gray-100 bg-white hover:shadow-2xl transition-all overflow-hidden"
                             >
-                                <div className="relative h-64 overflow-hidden bg-white flex items-center justify-center p-6">
+                                <div className={`relative h-64 overflow-hidden bg-white flex items-center justify-center ${category.title === "Olympics" ? "p-0" : "p-4"}`}>
                                     <img
                                         src={category.image}
                                         alt={category.title}
-                                        className="max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                                        className={`max-w-full max-h-full object-contain transition-transform duration-700 group-hover:scale-110 ${category.title === "Olympics" ? "scale-125" : ""}`}
                                     />
                                 </div>
 
