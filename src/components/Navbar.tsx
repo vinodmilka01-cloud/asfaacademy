@@ -105,12 +105,6 @@ export const Navbar = () => {
                             )}
                         </div>
                     ))}
-                    <Link
-                        href="/donate"
-                        className="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-full font-bold transition-transform hover:scale-105"
-                    >
-                        Support Us
-                    </Link>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -160,13 +154,7 @@ export const Navbar = () => {
                         )}
                     </div>
                 ))}
-                <Link
-                    href="/donate"
-                    className="bg-primary text-white px-10 py-3 rounded-full font-bold text-xl"
-                    onClick={() => setIsOpen(false)}
-                >
-                    Support Us
-                </Link>
+
             </div>
         </nav>
     );
