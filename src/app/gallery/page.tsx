@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const categories = [
     { id: "national", name: "National Medalists", icon: Trophy },
+    { id: "deaf-national", name: "National Medalists (Deaf)", icon: Trophy },
     { id: "state", name: "State Medalists", icon: Trophy },
     { id: "district", name: "District Medalists (Orphans)", icon: Trophy },
     { id: "memories", name: "Memories", icon: Users },
@@ -92,6 +93,30 @@ const galleryItems: GalleryItem[] = [
         category: "memories",
         title: "Victory Dance",
         img: "/memories-12.png"
+    },
+    {
+        id: "deaf-national-1",
+        category: "deaf-national",
+        title: "Deaf National Medalist",
+        img: "/deaf-national-1.png"
+    },
+    {
+        id: "deaf-national-2",
+        category: "deaf-national",
+        title: "Deaf National Medalist",
+        img: "/deaf-national-2.png"
+    },
+    {
+        id: "deaf-national-3",
+        category: "deaf-national",
+        title: "Deaf National Medalist",
+        img: "/deaf-national-3.png"
+    },
+    {
+        id: "deaf-national-4",
+        category: "deaf-national",
+        title: "Deaf National Medalist",
+        img: "/deaf-national-4.png"
     },
     {
         id: "district-1",
