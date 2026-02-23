@@ -14,12 +14,27 @@ const categories = [
 ];
 
 const galleryItems = [
-    { id: 1, category: "national", title: "National Gold In Shot-put", img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80" },
-    { id: 2, category: "state", title: "State Level Athletics Meet", img: "https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80" },
-    { id: 3, category: "activities", title: "Rural Coaching Camp", img: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80" },
-    { id: 4, category: "national", title: "National Para-Athletics", img: "https://images.unsplash.com/photo-1505232987774-83f625a398f7?auto=format&fit=crop&q=80" },
-    { id: 5, category: "state", title: "Inter-District Games", img: "https://images.unsplash.com/photo-1533560271118-23fc71d1a501?auto=format&fit=crop&q=80" },
-    { id: 6, category: "activities", title: "Wheelchair Training Session", img: "https://images.unsplash.com/photo-1444491741275-3747c33cc99b?auto=format&fit=crop&q=80" },
+    { id: "s1", category: "state", title: "State Level Athletics Meet", img: "https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80" },
+    { id: "a1", category: "activities", title: "Rural Coaching Camp", img: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80" },
+    { id: "s2", category: "state", title: "Inter-District Games", img: "https://images.unsplash.com/photo-1533560271118-23fc71d1a501?auto=format&fit=crop&q=80" },
+    { id: "a2", category: "activities", title: "Wheelchair Training Session", img: "https://images.unsplash.com/photo-1444491741275-3747c33cc99b?auto=format&fit=crop&q=80" },
+
+    // National Medalists
+    { id: "n1", category: "national", title: "Korra Akhila", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "n2", category: "national", title: "Nenavath Vijaya Lakshmi", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "n3", category: "national", title: "Karamtoth Jithender", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "n4", category: "national", title: "N. Ganesh", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "n5", category: "national", title: "M. Sai Baba", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "n6", category: "national", title: "D. Yaswanth (T20)", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "n7", category: "national", title: "Prasanth", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "n8", category: "national", title: "Revathi", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "n9", category: "national", title: "Kalyani", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "n10", category: "national", title: "Lavanya", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "n11", category: "national", title: "G. Vinay", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "n12", category: "national", title: "P. Subbu", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "n13", category: "national", title: "Charan", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "n14", category: "national", title: "N. Mahesh", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
+    { id: "n15", category: "national", title: "E. Nithin Nayak", img: "https://placehold.co/600x600/e2e8f0/1e293b?text=Image+Pending" },
 ];
 
 export default function GalleryPage() {
