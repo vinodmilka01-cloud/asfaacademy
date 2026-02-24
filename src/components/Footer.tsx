@@ -77,8 +77,8 @@ export const Footer = () => {
                             Your support can help a child reach the Olympics. Join us in making a difference.
                         </p>
                         <Link
-                            href="/donate"
-                            className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full font-black uppercase tracking-widest text-sm flex items-center justify-center gap-2 transition-all w-full shadow-lg shadow-primary/20"
+                            href="/support"
+                            className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-sm flex items-center justify-center gap-2 transition-all w-full shadow-lg shadow-primary/20 active:scale-95"
                         >
                             <Heart size={18} fill="currentColor" />
                             Sponsor an Athlete

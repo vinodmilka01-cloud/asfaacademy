@@ -165,14 +165,15 @@ export default function SportsPage() {
             {/* Quick Actions */}
             <section className="py-24 bg-white border-t border-gray-100">
                 <div className="container mx-auto px-6 text-center">
-                    <h2 className="text-4xl md:text-5xl font-black mb-12 italic uppercase tracking-tighter text-gray-950">
+                    <span className="text-primary font-black uppercase tracking-[0.3em] text-[10px] mb-6 block underline decoration-primary decoration-4 underline-offset-8">Take Action</span>
+                    <h2 className="text-4xl md:text-6xl font-black mb-16 italic uppercase tracking-tighter text-gray-950">
                         Join the <span className="text-primary italic">Movement</span>
                     </h2>
-                    <div className="flex flex-col md:flex-row gap-6 justify-center">
-                        <Link href="/gallery" className="bg-gray-950 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-gray-900 transition-all shadow-xl flex items-center justify-center gap-2 group">
+                    <div className="flex flex-col md:flex-row gap-8 justify-center">
+                        <Link href="/gallery" className="bg-gray-950 hover:bg-black text-white px-12 py-6 rounded-full font-black text-xl hover:shadow-2xl transition-all shadow-xl flex items-center justify-center gap-3 group active:scale-95 uppercase tracking-tighter">
                             Explore Gallery <Camera className="group-hover:rotate-12 transition-transform" />
                         </Link>
-                        <Link href="/contact" className="border-2 border-gray-950 text-gray-950 px-10 py-5 rounded-full font-bold text-lg hover:bg-gray-950 hover:text-white transition-all flex items-center justify-center gap-2 group">
+                        <Link href="/support" className="bg-primary hover:bg-primary/90 text-white px-12 py-6 rounded-full font-black text-xl transition-all shadow-2xl shadow-primary/30 flex items-center justify-center gap-3 group active:scale-95 uppercase tracking-tighter">
                             Support an Athlete <ArrowRight className="group-hover:translate-x-2 transition-transform" />
                         </Link>
                     </div>

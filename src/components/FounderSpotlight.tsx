@@ -10,73 +10,60 @@ export const FounderSpotlight = () => {
             <div className="container mx-auto px-6">
                 <div className="flex flex-col lg:flex-row gap-16 items-center">
                     <div className="w-full lg:w-1/2 relative" data-aos="fade-right">
-                        <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
-                            {/* Using a placeholder for the founder's photo */}
+                        <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl shadow-gray-200 group">
                             <img
                                 src="/founder.png"
                                 alt="Nenavath Vinod"
-                                className="w-full aspect-[4/5] object-cover object-top"
+                                className="w-full aspect-[4/5] object-cover object-top transition-transform duration-700 group-hover:scale-105"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
-                            <div className="absolute bottom-6 left-6 text-white">
-                                <p className="text-2xl font-bold">Nenavath Vinod</p>
-                                <p className="opacity-90">Founder & CEO, ASFA</p>
+                            <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-60" />
+                            <div className="absolute bottom-10 left-10 text-white">
+                                <p className="text-3xl font-black italic uppercase tracking-tighter">Nenavath Vinod</p>
+                                <p className="text-primary-foreground/80 font-bold uppercase tracking-[0.2em] text-xs">Founder & CEO, ASFA</p>
                             </div>
                         </div>
                         {/* Decorative elements */}
-                        <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary/10 rounded-full" />
-                        <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-primary/5 rounded-full" />
+                        <div className="absolute -top-10 -left-10 w-40 h-40 bg-primary/5 rounded-full blur-3xl animate-pulse" />
+                        <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-primary/10 rounded-full blur-[100px]" />
                     </div>
 
                     <div className="w-full lg:w-1/2" data-aos="fade-left">
-                        <div className="mb-6 flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-sm">
-                            <span className="w-8 h-[2px] bg-primary" />
-                            Founder Spotlight
+                        <div className="mb-8 flex items-center gap-3 text-primary font-black uppercase tracking-[0.4em] text-xs">
+                            <span className="w-12 h-[2px] bg-primary" />
+                            FOUNDER SPOTLIGHT
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight italic uppercase tracking-tighter text-gray-950">
+                        <h2 className="text-4xl md:text-6xl font-black mb-10 leading-tight italic uppercase tracking-tighter text-gray-950">
                             A Visionary Leader with a <br /><span className="text-primary italic">Heart for the Underprivileged</span>
                         </h2>
 
-                        <div className="relative mb-10">
-                            <p className="text-xl text-black italic leading-relaxed relative z-10 pl-6 font-bold">
+                        <div className="relative mb-12 bg-gray-50 p-10 rounded-[2.5rem] border-l-8 border-primary italic">
+                            <p className="text-2xl text-gray-800 italic leading-relaxed font-black">
                                 "The organization believes that successful people should work with higher human values as a foundation. Success with purpose and integrity is what we strive for."
                             </p>
                         </div>
 
-                        <div className="space-y-6">
-                            <div className="flex items-start gap-4">
-                                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                                    <Award size={20} />
+                        <div className="space-y-8">
+                            {[
+                                { icon: Award, title: "International Level-1 Coach", desc: "Qualified Athletics Coach (2018), bringing global standards to local talent." },
+                                { icon: Heart, title: "Communal Dedication", desc: "Door-to-door training for handicapped children since 2017." },
+                                { icon: BookOpen, title: "Fit India Vision", desc: "Promoting health, fitness, and employment for sportspersons." }
+                            ].map((item, i) => (
+                                <div key={i} className="flex items-start gap-6 group">
+                                    <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shrink-0 group-hover:scale-110 transition-transform shadow-sm">
+                                        <item.icon size={24} />
+                                    </div>
+                                    <div>
+                                        <h4 className="font-black text-xl text-gray-950 uppercase tracking-tight italic mb-1">{item.title}</h4>
+                                        <p className="text-gray-500 font-bold italic">{item.desc}</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h4 className="font-black text-lg text-gray-950 uppercase tracking-tight">International Level-1 Coach</h4>
-                                    <p className="text-gray-900 font-bold">Qualified Athletics Coach in 2018, bringing global standards to local talent.</p>
-                                </div>
-                            </div>
-                            <div className="flex items-start gap-4">
-                                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                                    <Heart size={20} />
-                                </div>
-                                <div>
-                                    <h4 className="font-black text-lg text-gray-950 uppercase tracking-tight">Communal Dedication</h4>
-                                    <p className="text-gray-900 font-bold">Conducts door-to-door training for handicapped children weekly since 2017.</p>
-                                </div>
-                            </div>
-                            <div className="flex items-start gap-4">
-                                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                                    <BookOpen size={20} />
-                                </div>
-                                <div>
-                                    <h4 className="font-black text-lg text-gray-950 uppercase tracking-tight">Fit India Vision</h4>
-                                    <p className="text-gray-900 font-bold">Promoting health, fitness, and employment opportunities for sportspersons across Telangana.</p>
-                                </div>
-                            </div>
+                            ))}
                         </div>
 
-                        <div className="mt-12">
+                        <div className="mt-14">
                             <Link
-                                href="/about/founder"
-                                className="inline-block bg-gray-900 border border-gray-100 hover:bg-gray-800 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg text-center"
+                                href="/about"
+                                className="inline-block bg-primary hover:bg-primary/90 text-white px-10 py-5 rounded-full font-black text-xl transition-all shadow-2xl shadow-primary/30 active:scale-95 uppercase tracking-tighter"
                             >
                                 Read More About Vinod
                             </Link>

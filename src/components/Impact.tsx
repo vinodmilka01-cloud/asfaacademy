@@ -21,44 +21,52 @@ export const Impact = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                     {stats.map((stat, index) => (
                         <div
                             key={stat.label}
-                            className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-gray-100 text-center group"
+                            className="bg-white p-10 rounded-[3rem] shadow-2xl shadow-gray-200/50 hover:shadow-primary/5 transition-all border border-gray-100 text-center group relative overflow-hidden"
                             data-aos="fade-up"
                             data-aos-delay={index * 100}
                         >
-                            <div className={`w-16 h-16 rounded-full mx-auto flex items-center justify-center mb-6 bg-gray-50 group-hover:bg-primary/10 transition-colors`}>
-                                <stat.icon className={`w-8 h-8 ${stat.color} group-hover:text-primary transition-colors`} />
+                            <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-110 transition-transform duration-500" />
+
+                            <div className={`w-20 h-20 rounded-3xl mx-auto flex items-center justify-center mb-8 bg-gray-50 group-hover:bg-primary/10 transition-colors shadow-inner`}>
+                                <stat.icon className={`w-10 h-10 ${stat.color} group-hover:text-primary transition-colors`} />
                             </div>
-                            <div className="text-5xl font-black text-gray-900 mb-2">{stat.value}</div>
-                            <div className="text-gray-950 font-black uppercase tracking-wider text-sm">{stat.label}</div>
+                            <div className="text-6xl font-black text-gray-900 mb-4 italic tracking-tighter">{stat.value}</div>
+                            <div className="text-gray-400 font-black uppercase tracking-[0.2em] text-[10px]">{stat.label}</div>
                         </div>
                     ))}
                 </div>
 
-                <div className="mt-20 p-8 md:p-12 rounded-3xl bg-secondary relative overflow-hidden shadow-2xl" data-aos="zoom-in">
-                    <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
-                    <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
+                <div className="mt-24 p-12 md:p-20 rounded-[4rem] bg-gray-950 text-white relative overflow-hidden shadow-2xl" data-aos="zoom-in">
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+                    <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2" />
 
-                    <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <div>
-                            <h3 className="text-3xl font-bold mb-6 italic text-primary">"Sports for Social Change"</h3>
-                            <p className="text-black text-xl leading-relaxed mb-8 font-bold italic">
-                                Over 80+ sportsmen from our academy have secured jobs in sectors like Indian Railways and the Police. We don't just train athletes; we build careers.
+                            <span className="text-primary font-black uppercase tracking-[0.3em] text-xs mb-6 block">Our Philosophy</span>
+                            <h3 className="text-4xl md:text-5xl font-black mb-10 italic leading-tight uppercase tracking-tighter text-white">Sports for <span className="text-primary italic">Social Change</span></h3>
+                            <p className="text-gray-300 text-xl leading-relaxed mb-12 italic font-medium">
+                                Over 80+ sportsmen from our academy have secured jobs in sectors like Indian Railways and the Police. We don't just train athletes; we build careers and secure futures.
                             </p>
                             <div className="flex flex-wrap gap-4">
-                                <span className="px-6 py-3 bg-white rounded-full text-xs font-black shadow-lg border border-gray-200 text-gray-950 uppercase tracking-widest">Railway Recruitment</span>
-                                <span className="px-6 py-3 bg-white rounded-full text-xs font-black shadow-lg border border-gray-200 text-gray-950 uppercase tracking-widest">Police Department</span>
-                                <span className="px-6 py-3 bg-white rounded-full text-xs font-black shadow-lg border border-gray-200 text-gray-950 uppercase tracking-widest">Private Sector</span>
+                                {["Railway Recruitment", "Police Department", "Private Sector"].map((tag) => (
+                                    <span key={tag} className="px-6 py-3 bg-white/5 backdrop-blur-md rounded-full text-[10px] font-black border border-white/10 text-white uppercase tracking-widest shadow-xl">
+                                        {tag}
+                                    </span>
+                                ))}
                             </div>
                         </div>
-                        <div className="bg-primary/5 p-8 rounded-2xl border border-primary/10 italic">
-                            <p className="text-xl text-black leading-relaxed font-black">
-                                "We provide special focus on Divyang (differently-abled) children, visiting their homes to provide training that builds self-worth and independence."
+                        <div className="bg-primary/10 p-12 rounded-[3rem] border border-primary/20 backdrop-blur-sm relative transition-all hover:border-primary/40 group">
+                            <div className="absolute top-0 left-0 w-2 h-full bg-primary rounded-full opacity-50" />
+                            <p className="text-2xl text-white leading-relaxed font-black italic">
+                                "We provide special focus on Divyang children, visiting their homes to provide training that builds self-worth and independence."
                             </p>
-                            <footer className="mt-4 font-bold text-primary">— Academy Philosophy</footer>
+                            <footer className="mt-8 font-black text-primary uppercase tracking-[0.2em] text-sm">
+                                — ASFA ACADEMY FOUNDATION
+                            </footer>
                         </div>
                     </div>
                 </div>
