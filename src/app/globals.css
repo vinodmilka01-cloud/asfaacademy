@@ -89,3 +89,13 @@ h6 {
 .animate-bounce-subtle {
   animation: bounce-subtle 3s ease-in-out infinite;
 }
+
+/* Hide Next.js Dev Indicator & Vercel Toolbar */
+#nextjs-dev-indicator,
+[data-nextjs-dev-indicator-v2],
+[data-vercel-toolbar],
+#vercel-live-feedback {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
