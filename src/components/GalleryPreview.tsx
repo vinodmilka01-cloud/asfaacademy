@@ -5,7 +5,7 @@ import { ArrowRight, Camera } from "lucide-react";
 import { motion } from "framer-motion";
 
 const previewImages = [
-    { id: "m1", title: "Banavath Naresh - Athletics", img: "/banavath-naresh.png" },
+    { id: "m1", title: "A. Divya - National Medalist", img: "/a-divya.png" },
     { id: "m2", title: "Dhanavath Yashwanth - Athletics", img: "/dhanavath-yashwanth.png" },
     { id: "n1", title: "M. Sirisha - National Medalist", img: "/m-shirisha.png" },
 ];
