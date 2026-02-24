@@ -46,17 +46,17 @@ export const Navbar = () => {
             )}
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
-                <Link href="/" className="flex items-center gap-3">
+                <Link href="/" className="flex items-center gap-2 sm:gap-3 shrink-0">
                     <img
                         src="/logo.png"
                         alt="ASFA Logo"
-                        className="h-10 w-auto object-contain"
+                        className="h-8 sm:h-10 w-auto object-contain"
                     />
                     <div className="flex flex-col">
-                        <span className="font-bold text-lg leading-tight text-gray-900">
+                        <span className="font-bold text-base sm:text-lg leading-tight text-gray-900">
                             ASFA
                         </span>
-                        <span className="text-[10px] font-medium tracking-widest uppercase text-primary">
+                        <span className="hidden xs:block text-[8px] sm:text-[10px] font-medium tracking-widest uppercase text-primary">
                             Academy of Sports
                         </span>
                     </div>

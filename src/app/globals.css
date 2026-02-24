@@ -8,6 +8,7 @@
   --color-secondary: #FFFFFF;
   --font-sans: var(--font-outfit), var(--font-geist-sans);
   --font-heading: var(--font-outfit), var(--font-geist-sans);
+  --breakpoint-xs: 375px;
 }
 
 :root {
@@ -31,7 +32,12 @@ body {
   font-family: var(--font-sans);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 700;
 }
@@ -60,4 +66,20 @@ h1, h2, h3, h4, h5, h6 {
 
 [data-aos].aos-animate {
   pointer-events: auto;
+}
+
+@keyframes bounce-subtle {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 3s ease-in-out infinite;
 }
