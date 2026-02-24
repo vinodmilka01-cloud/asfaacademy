@@ -340,7 +340,7 @@ export default function GalleryPage() {
             <Navbar />
 
             {/* Header */}
-            <section className="pt-40 pb-20 bg-gray-950 text-white overflow-hidden relative">
+            <section className="pt-28 pb-12 md:pt-40 md:pb-20 bg-gray-950 text-white overflow-hidden relative">
                 <div className="absolute inset-0 bg-primary/10" />
                 <div className="container mx-auto px-6 relative z-10">
                     <h1 className="text-5xl md:text-7xl font-black mb-6 italic">Visualizing <span className="text-primary italic">Success</span></h1>
@@ -351,7 +351,7 @@ export default function GalleryPage() {
             </section>
 
             {/* Filter System */}
-            <section className="py-12 bg-white border-b border-gray-100">
+            <section className="py-8 md:py-12 bg-white border-b border-gray-100">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                         {categories.map((cat) => (
@@ -372,7 +372,7 @@ export default function GalleryPage() {
             </section>
 
             {/* Gallery Grid */}
-            <section className="py-12 md:py-24 bg-white">
+            <section className="py-8 md:py-24 bg-white">
                 <div className="container mx-auto px-6">
                     <motion.div
                         layout

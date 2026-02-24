@@ -6,9 +6,9 @@ import { Award, BookOpen, Heart } from "lucide-react";
 
 export const FounderSpotlight = () => {
     return (
-        <section className="py-12 md:py-24 bg-white overflow-hidden">
+        <section className="py-8 md:py-24 bg-white overflow-hidden">
             <div className="container mx-auto px-6">
-                <div className="flex flex-col lg:flex-row gap-16 items-center">
+                <div className="flex flex-col lg:flex-row gap-10 md:gap-16 items-center">
                     <div className="w-full lg:w-1/2 relative" data-aos="fade-right">
                         <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl shadow-gray-200 group">
                             <img

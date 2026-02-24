@@ -33,9 +33,9 @@ const programs = [
 
 export const Programs = () => {
     return (
-        <section className="py-12 md:py-24 bg-gray-50">
+        <section className="py-8 md:py-24 bg-gray-50">
             <div className="container mx-auto px-6">
-                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-10 md:mb-16 gap-8">
                     <div className="max-w-3xl" data-aos="fade-right">
                         <span className="text-primary font-black uppercase tracking-[0.3em] text-xs mb-4 block">Holistic Development</span>
                         <h2 className="text-4xl md:text-6xl font-black mb-6 italic uppercase tracking-tighter text-gray-950">Developing Champions, <br /><span className="text-primary italic">Transforming Lives</span></h2>

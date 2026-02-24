@@ -56,7 +56,7 @@ export default function TeamPage() {
             <Navbar />
 
             {/* Header */}
-            <section className="pt-40 pb-20 bg-gray-50 text-center">
+            <section className="pt-28 pb-12 md:pt-40 md:pb-20 bg-gray-50 text-center">
                 <div className="container mx-auto px-6">
                     <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">Our Team</span>
                     <h1 className="text-5xl md:text-7xl font-black mb-6 text-gray-950 italic uppercase tracking-tighter">Board of <span className="text-primary italic">Directors</span></h1>
@@ -67,9 +67,9 @@ export default function TeamPage() {
             </section>
 
             {/* Team Grid */}
-            <section className="py-12 md:py-24 bg-white">
+            <section className="py-8 md:py-24 bg-white">
                 <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
                         {team.map((member, index) => (
                             <div
                                 key={member.name}

@@ -12,9 +12,9 @@ const stats = [
 
 export const Impact = () => {
     return (
-        <section className="py-12 md:py-24 bg-gray-50 overflow-hidden">
+        <section className="py-8 md:py-24 bg-gray-50 overflow-hidden">
             <div className="container mx-auto px-6">
-                <div className="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16" data-aos="fade-up">
                     <h2 className="text-4xl md:text-5xl font-black mb-6 italic uppercase tracking-tighter text-gray-900">Our Impact <span className="text-primary italic">in Numbers</span></h2>
                     <p className="text-gray-900 text-lg font-bold">
                         We measure our success not just by medals, but by the transformations in the lives of our athletes and their communities.

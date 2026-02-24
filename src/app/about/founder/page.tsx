@@ -9,7 +9,7 @@ export default function FounderPage() {
             <Navbar />
 
             {/* Hero Header */}
-            <section className="pt-40 pb-20 bg-primary text-white relative overflow-hidden">
+            <section className="pt-28 pb-12 md:pt-40 md:pb-20 bg-primary text-white relative overflow-hidden">
                 <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 items-center gap-12 relative z-10">
                     <div data-aos="fade-right">
                         <span className="font-bold uppercase tracking-widest text-sm mb-4 block text-white/80">Founder & CEO, ASFA</span>
@@ -34,10 +34,10 @@ export default function FounderPage() {
             </section>
 
             {/* Biography Section */}
-            <section className="py-12 md:py-24 bg-white">
+            <section className="py-8 md:py-24 bg-white">
                 <div className="container mx-auto px-6">
                     <div className="max-w-4xl mx-auto">
-                        <div className="relative mb-20" data-aos="fade-up">
+                        <div className="relative mb-12 md:mb-20" data-aos="fade-up">
                             <Quote className="absolute -top-10 -left-10 text-primary/10 w-32 h-32 -rotate-12" />
                             <div className="relative z-10 bg-gray-50 p-12 rounded-3xl border border-gray-100 shadow-sm">
                                 <p className="text-2xl md:text-3xl text-gray-950 italic leading-relaxed text-center font-black">
@@ -49,7 +49,7 @@ export default function FounderPage() {
                         <div className="space-y-12" data-aos="fade-up">
                             <h2 className="text-4xl md:text-5xl font-black italic mb-12 uppercase tracking-tighter text-gray-950">The Journey of <span className="text-primary italic">Dedication</span></h2>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                                 <div className="space-y-6">
                                     <div className="flex gap-6 items-start">
                                         <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0">

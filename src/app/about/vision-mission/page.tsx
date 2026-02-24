@@ -8,7 +8,7 @@ export default function VisionMissionPage() {
             <Navbar />
 
             {/* Header */}
-            <section className="pt-40 pb-20 bg-white text-center text-gray-900">
+            <section className="pt-28 pb-12 md:pt-40 md:pb-20 bg-white text-center text-gray-900">
                 <div className="container mx-auto px-6">
                     <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">Our North Star</span>
                     <h1 className="text-5xl md:text-7xl font-black mb-6 italic uppercase tracking-tighter">Vision & <span className="text-primary italic">Mission</span></h1>
@@ -19,9 +19,9 @@ export default function VisionMissionPage() {
             </section>
 
             {/* Vision & Mission Cards */}
-            <section className="py-12 md:py-24 bg-gray-50 overflow-hidden">
+            <section className="py-8 md:py-24 bg-gray-50 overflow-hidden">
                 <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
                         <div className="bg-black text-white p-12 rounded-[3rem] shadow-xl flex flex-col items-center text-center relative group overflow-hidden" data-aos="fade-right">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full -mr-10 -mt-10 transition-transform group-hover:scale-150" />
                             <div className="w-20 h-20 rounded-2xl bg-primary flex items-center justify-center text-white mb-8 shadow-lg shadow-primary/20">
@@ -48,7 +48,7 @@ export default function VisionMissionPage() {
             </section>
 
             {/* Core Values */}
-            <section className="py-12 md:py-24 bg-white text-gray-900">
+            <section className="py-8 md:py-24 bg-white text-gray-900">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-20" data-aos="fade-up">
                         <h2 className="text-4xl md:text-5xl font-black mb-6 italic uppercase tracking-tighter text-gray-900">The Philosophy of <span className="text-primary italic">Success</span></h2>
@@ -57,7 +57,7 @@ export default function VisionMissionPage() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
                         {[
                             {
                                 title: "Human Values",

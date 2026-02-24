@@ -4,9 +4,9 @@ import { CheckCircle2 } from "lucide-react";
 
 export const VisionMission = () => {
     return (
-        <section className="py-12 md:py-24 bg-white">
+        <section className="py-8 md:py-24 bg-white">
             <div className="container mx-auto px-6">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
                     <div data-aos="fade-right">
                         <span className="text-primary font-black uppercase tracking-[0.3em] text-xs mb-6 block">Our Core</span>
                         <h2 className="text-4xl md:text-6xl font-black mb-12 italic uppercase tracking-tighter text-gray-950">Our Founding <br /><span className="text-primary italic">Philosophy</span></h2>
