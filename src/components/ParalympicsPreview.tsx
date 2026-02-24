@@ -42,9 +42,9 @@ export const ParalympicsPreview = () => {
                         <div className="relative">
                             <div className="rounded-[3rem] overflow-hidden shadow-2xl border-8 border-gray-50">
                                 <img
-                                    src="https://images.unsplash.com/photo-1444491741275-3747c33cc99b?auto=format&fit=crop&q=80"
+                                    src="/door-to-door.jpg"
                                     alt="Para athlete training"
-                                    className="w-full aspect-square object-cover"
+                                    className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                             </div>
                             {/* Absolute badge */}
