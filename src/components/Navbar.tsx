@@ -62,7 +62,6 @@ export const Navbar = () => {
                     </div>
                 </Link>
 
-                {/* Desktop Nav */}
                 <div className="hidden md:flex items-center space-x-8">
                     {navLinks.map((link) => (
                         <div key={link.name} className="relative group">
@@ -91,6 +90,13 @@ export const Navbar = () => {
                             )}
                         </div>
                     ))}
+
+                    <Link
+                        href="/support"
+                        className="bg-primary text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 active:scale-95 transition-transform"
+                    >
+                        Support Us
+                    </Link>
                 </div>
 
                 {/* Mobile Toggle */}
@@ -140,6 +146,14 @@ export const Navbar = () => {
                         )}
                     </div>
                 ))}
+
+                <Link
+                    href="/support"
+                    className="w-[80%] bg-primary text-white px-8 py-4 rounded-full font-bold text-xl text-center shadow-xl shadow-primary/20"
+                    onClick={() => setIsOpen(false)}
+                >
+                    Support Us
+                </Link>
 
             </div>
         </nav>

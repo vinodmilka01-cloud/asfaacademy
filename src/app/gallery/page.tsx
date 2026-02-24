@@ -225,6 +225,108 @@ const galleryItems: GalleryItem[] = [
         category: "district",
         title: "District Medalist",
         img: "/district-19.png"
+    },
+    {
+        id: "national-shirisha",
+        category: "national",
+        title: "M.Shirisha - F40 Gold medal in short put and javelin category, Jr National para Athletics",
+        img: "/m-shirisha.png"
+    },
+    {
+        id: "national-divya",
+        category: "national",
+        title: "A.Divya - F47 Bronze 🥉 medal in long jump",
+        img: "/a-divya.png"
+    },
+    {
+        id: "national-yashwanth",
+        category: "national",
+        title: "Dhanavath yashwanth - Intellectual Category 400 meters All India 7th Rank",
+        img: "/dhanavath-yashwanth.png"
+    },
+    {
+        id: "national-shirisha-2",
+        category: "national",
+        title: "M. Shirisha - National Medalist Achievement",
+        img: "/m-shirisha-2.png"
+    },
+    {
+        id: "national-group-1",
+        category: "national",
+        title: "National Athletics Team Achievement",
+        img: "/national-group-1.png"
+    },
+    {
+        id: "national-group-2",
+        category: "national",
+        title: "Grace Cancer Run - National Para Team",
+        img: "/national-group-2.png"
+    },
+    {
+        id: "national-group-3",
+        category: "national",
+        title: "National para athletic championship - Team Achievement",
+        img: "/national-group-3.png"
+    },
+    {
+        id: "national-individual-1",
+        category: "national",
+        title: "Korra Akhila - National Medalist with Family",
+        img: "/national-individual-1.png"
+    },
+    {
+        id: "state-1",
+        category: "state",
+        title: "State Medalist Achievement",
+        img: "/state-1.png"
+    },
+    {
+        id: "state-2",
+        category: "state",
+        title: "State Medalist Achievement",
+        img: "/state-2.png"
+    },
+    {
+        id: "state-3",
+        category: "state",
+        title: "State Medalist Achievement",
+        img: "/state-3.png"
+    },
+    {
+        id: "state-4",
+        category: "state",
+        title: "State Medalist Achievement",
+        img: "/state-4.png"
+    },
+    {
+        id: "state-5",
+        category: "state",
+        title: "State Medalist Achievement",
+        img: "/state-5.png"
+    },
+    {
+        id: "state-6",
+        category: "state",
+        title: "State Medalist Achievement",
+        img: "/state-6.png"
+    },
+    {
+        id: "state-7",
+        category: "state",
+        title: "State Medalist Achievement",
+        img: "/state-7.png"
+    },
+    {
+        id: "state-8",
+        category: "state",
+        title: "State Medalist Achievement",
+        img: "/state-8.png"
+    },
+    {
+        id: "state-9",
+        category: "state",
+        title: "State Medalist Achievement",
+        img: "/state-9.png"
     }
 ];
 
@@ -274,7 +376,7 @@ export default function GalleryPage() {
                 <div className="container mx-auto px-6">
                     <motion.div
                         layout
-                        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
                     >
                         <AnimatePresence>
                             {filteredItems.map((item) => (
@@ -285,9 +387,13 @@ export default function GalleryPage() {
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.9 }}
                                     transition={{ duration: 0.3 }}
-                                    className="group relative rounded-3xl overflow-hidden cursor-pointer shadow-lg aspect-square"
+                                    className="group relative rounded-3xl overflow-hidden cursor-pointer shadow-lg aspect-[3/4] bg-slate-50 border border-gray-100 p-2"
                                 >
-                                    <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                                    <img
+                                        src={item.img}
+                                        alt={item.title}
+                                        className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                                    />
                                 </motion.div>
                             ))}
                         </AnimatePresence>

@@ -35,7 +35,7 @@ export default function Home() {
               Sports is not just a game; it's a doorway to dignity, social integration, and economic development. Join us in making a difference.
             </p>
             <div className="flex flex-col md:flex-row gap-6 justify-center">
-              <Link href="/donate" className="bg-white text-primary px-10 py-4 rounded-full font-bold text-xl hover:bg-gray-100 transition-all shadow-xl">
+              <Link href="/support" className="bg-white text-primary px-10 py-4 rounded-full font-bold text-xl hover:bg-gray-100 transition-all shadow-xl">
                 Become a Sponsor
               </Link>
               <Link href="/contact" className="bg-transparent border-2 border-white px-10 py-4 rounded-full font-bold text-xl hover:bg-white/10 transition-all">
