@@ -13,7 +13,7 @@ export const FloatingWhatsApp = () => {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-[100] bg-[#25D366] text-white p-3.5 sm:p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group flex items-center gap-2 sm:gap-3 ring-4 ring-white/20 ring-offset-2 ring-offset-transparent animate-bounce-subtle"
+            className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-[9999] bg-[#25D366] text-white p-3.5 sm:p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group flex items-center gap-2 sm:gap-3 ring-4 ring-white/20 ring-offset-2 ring-offset-transparent animate-bounce-subtle"
             aria-label="Contact us on WhatsApp"
         >
             <span className="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 font-bold text-sm sm:text-base">
