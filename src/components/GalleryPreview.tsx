@@ -12,7 +12,7 @@ const previewImages = [
 
 export const GalleryPreview = () => {
     return (
-        <section className="py-24 bg-white" id="gallery-preview">
+        <section className="py-12 md:py-24 bg-white" id="gallery-preview">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6" data-aos="fade-up">
                     <div className="max-w-2xl">

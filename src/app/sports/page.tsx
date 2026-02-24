@@ -61,7 +61,7 @@ export default function SportsPage() {
             </section>
 
             {/* Categories Grid */}
-            <section className="py-24 bg-white">
+            <section className="py-12 md:py-24 bg-white">
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                         {sportCategories.map((category, index) => (
@@ -107,7 +107,7 @@ export default function SportsPage() {
             </section>
 
             {/* Philosophy Section */}
-            <section className="py-24 bg-gray-50 overflow-hidden">
+            <section className="py-12 md:py-24 bg-gray-50 overflow-hidden">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col lg:flex-row gap-20 items-center">
                         <motion.div
@@ -163,7 +163,7 @@ export default function SportsPage() {
             </section>
 
             {/* Quick Actions */}
-            <section className="py-24 bg-white border-t border-gray-100">
+            <section className="py-12 md:py-24 bg-white border-t border-gray-100">
                 <div className="container mx-auto px-6 text-center">
                     <span className="text-primary font-black uppercase tracking-[0.3em] text-[10px] mb-6 block underline decoration-primary decoration-4 underline-offset-8">Take Action</span>
                     <h2 className="text-4xl md:text-6xl font-black mb-16 italic uppercase tracking-tighter text-gray-950">

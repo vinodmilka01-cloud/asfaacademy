@@ -372,7 +372,7 @@ export default function GalleryPage() {
             </section>
 
             {/* Gallery Grid */}
-            <section className="py-24 bg-white">
+            <section className="py-12 md:py-24 bg-white">
                 <div className="container mx-auto px-6">
                     <motion.div
                         layout

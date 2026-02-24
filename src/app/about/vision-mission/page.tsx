@@ -19,7 +19,7 @@ export default function VisionMissionPage() {
             </section>
 
             {/* Vision & Mission Cards */}
-            <section className="py-24 bg-gray-50 overflow-hidden">
+            <section className="py-12 md:py-24 bg-gray-50 overflow-hidden">
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         <div className="bg-black text-white p-12 rounded-[3rem] shadow-xl flex flex-col items-center text-center relative group overflow-hidden" data-aos="fade-right">
@@ -48,7 +48,7 @@ export default function VisionMissionPage() {
             </section>
 
             {/* Core Values */}
-            <section className="py-24 bg-white text-gray-900">
+            <section className="py-12 md:py-24 bg-white text-gray-900">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-20" data-aos="fade-up">
                         <h2 className="text-4xl md:text-5xl font-black mb-6 italic uppercase tracking-tighter text-gray-900">The Philosophy of <span className="text-primary italic">Success</span></h2>

@@ -33,7 +33,7 @@ const programs = [
 
 export const Programs = () => {
     return (
-        <section className="py-24 bg-gray-50">
+        <section className="py-12 md:py-24 bg-gray-50">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                     <div className="max-w-3xl" data-aos="fade-right">

@@ -12,7 +12,7 @@ const stats = [
 
 export const Impact = () => {
     return (
-        <section className="py-24 bg-gray-50 overflow-hidden">
+        <section className="py-12 md:py-24 bg-gray-50 overflow-hidden">
             <div className="container mx-auto px-6">
                 <div className="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
                     <h2 className="text-4xl md:text-5xl font-black mb-6 italic uppercase tracking-tighter text-gray-900">Our Impact <span className="text-primary italic">in Numbers</span></h2>

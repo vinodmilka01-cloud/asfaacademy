@@ -18,7 +18,7 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            <section className="py-24 bg-white relative overflow-hidden">
+            <section className="py-12 md:py-24 bg-white relative overflow-hidden">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col lg:flex-row gap-16">
                         {/* Info Column */}

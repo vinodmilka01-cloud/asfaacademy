@@ -5,7 +5,7 @@ import { Accessibility, Home, ArrowRight, ShieldCheck, Heart } from "lucide-reac
 
 export const ParalympicsPreview = () => {
     return (
-        <section className="py-24 bg-white relative overflow-hidden" id="inclusive-sports">
+        <section className="py-12 md:py-24 bg-white relative overflow-hidden" id="inclusive-sports">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col lg:flex-row-reverse gap-16 items-center">
                     <div className="lg:w-1/2" data-aos="fade-left">

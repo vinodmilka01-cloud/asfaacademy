@@ -34,7 +34,7 @@ export default function FounderPage() {
             </section>
 
             {/* Biography Section */}
-            <section className="py-24 bg-white">
+            <section className="py-12 md:py-24 bg-white">
                 <div className="container mx-auto px-6">
                     <div className="max-w-4xl mx-auto">
                         <div className="relative mb-20" data-aos="fade-up">

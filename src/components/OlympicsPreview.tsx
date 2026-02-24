@@ -5,7 +5,7 @@ import { Trophy, Target, ArrowRight, Star } from "lucide-react";
 
 export const OlympicsPreview = () => {
     return (
-        <section className="py-24 bg-gray-950 text-white overflow-hidden relative" id="olympics-preview">
+        <section className="py-12 md:py-24 bg-gray-950 text-white overflow-hidden relative" id="olympics-preview">
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
             <div className="container mx-auto px-6 relative z-10">
                 <div className="flex flex-col lg:flex-row gap-16 items-center">
