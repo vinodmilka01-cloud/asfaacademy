@@ -1,0 +1,56 @@
+[
+    {
+        "id": "1",
+        "name": "Nenavath Ganesh",
+        "role": "Vice President",
+        "image": "/nenavath-ganesh.png"
+    },
+    {
+        "id": "2",
+        "name": "Vankunavath Revanth",
+        "role": "Secretary",
+        "image": "/vankunavath-revanth.png"
+    },
+    {
+        "id": "3",
+        "name": "Nenavath Vijaya Lakshmi",
+        "role": "Join secretary",
+        "image": "/nenavath-vijaya-lakshmi.png"
+    },
+    {
+        "id": "4",
+        "name": "Karamtoth Jithendar",
+        "role": "Treasury",
+        "image": "/karamtoth-jithendar.png"
+    },
+    {
+        "id": "5",
+        "name": "G. Sagar",
+        "role": "Compation director",
+        "image": "/s-sagar.png"
+    },
+    {
+        "id": "6",
+        "name": "Banavath Naresh",
+        "role": "Organization secretary",
+        "image": "/banavath-naresh.png"
+    },
+    {
+        "id": "7",
+        "name": "Mudavath Vijay",
+        "role": "Organization chairman",
+        "image": "/mudavath-vijay.png"
+    },
+    {
+        "id": "8",
+        "name": "Korra Akhila",
+        "role": "Static Sick Officer",
+        "image": "/korra-akhila.png"
+    },
+    {
+        "id": "9",
+        "name": "S Rajesh",
+        "role": "organization committee",
+        "image": "/s-rajesh.png"
+    }
+]

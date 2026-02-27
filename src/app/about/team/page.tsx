@@ -1,56 +1,33 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { User, ShieldCheck, Mail } from "lucide-react";
+import { User } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
-const team = [
-    {
-        name: "Nenavath Ganesh",
-        role: "Vice President",
-        image: "/nenavath-ganesh.png"
-    },
-    {
-        name: "Vankunavath Revanth",
-        role: "Secretary",
-        image: "/vankunavath-revanth.png"
-    },
-    {
-        name: "Nenavath Vijaya Lakshmi",
-        role: "Join secretary",
-        image: "/nenavath-vijaya-lakshmi.png"
-    },
-    {
-        name: "Karamtoth Jithendar",
-        role: "Treasury",
-        image: "/karamtoth-jithendar.png"
-    },
-    {
-        name: "G. Sagar",
-        role: "Compation director",
-        image: "/s-sagar.png"
-    },
-    {
-        name: "Banavath Naresh",
-        role: "Organization secretary",
-        image: "/banavath-naresh.png"
-    },
-    {
-        name: "Mudavath Vijay",
-        role: "Organization chairman",
-        image: "/mudavath-vijay.png"
-    },
-    {
-        name: "Korra Akhila",
-        role: "Static Sick Officer",
-        image: "/korra-akhila.png"
-    },
-    {
-        name: "S Rajesh",
-        role: "organization committee",
-        image: "/s-rajesh.png"
+interface TeamMember {
+    id: string;
+    name: string;
+    role: string;
+    image: string;
+}
+
+async function getTeam(): Promise<TeamMember[]> {
+    try {
+        const { data, error } = await supabase
+            .from('team')
+            .select('*')
+            .order('created_at', { ascending: false });
+
+        if (error) throw error;
+        return data || [];
+    } catch (error) {
+        console.error('Error fetching team:', error);
+        return [];
     }
-];
+}
 
-export default function TeamPage() {
+export default async function TeamPage() {
+    const team = await getTeam();
+
     return (
         <main className="min-h-screen">
             <Navbar />
@@ -58,60 +35,45 @@ export default function TeamPage() {
             {/* Header */}
             <section className="pt-28 pb-12 md:pt-40 md:pb-20 bg-gray-50 text-center">
                 <div className="container mx-auto px-6">
-                    <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">Our Team</span>
-                    <h1 className="text-5xl md:text-7xl font-black mb-6 text-gray-950 italic uppercase tracking-tighter">Board of <span className="text-primary italic">Directors</span></h1>
+                    <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">Our People</span>
+                    <h1 className="text-5xl md:text-7xl font-black mb-6 text-gray-950 italic uppercase tracking-tighter">
+                        Meet The <span className="text-primary italic">Team</span>
+                    </h1>
                     <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
-                        Leading the transformation of Indian sports with integrity and purpose.
+                        The dedicated individuals who drive ASFA&apos;s mission every single day.
                     </p>
                 </div>
             </section>
 
             {/* Team Grid */}
-            <section className="py-8 md:py-24 bg-white">
+            <section className="py-24 bg-white">
                 <div className="container mx-auto px-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-                        {team.map((member, index) => (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                        {team.map((member) => (
                             <div
-                                key={member.name}
-                                className="group relative bg-gray-50 rounded-[2.5rem] p-8 border border-gray-100 hover:bg-white hover:shadow-2xl hover:border-primary/20 transition-all duration-300 overflow-hidden"
-                                data-aos="fade-up"
-                                data-aos-delay={index * 50}
+                                key={member.id}
+                                className="group relative bg-gray-50 rounded-[3rem] p-8 border border-gray-100 hover:bg-white hover:shadow-2xl transition-all duration-500 text-center"
                             >
-                                <div className="flex flex-col items-center">
-                                    <div className="w-48 h-48 rounded-3xl overflow-hidden mb-6 group-hover:scale-105 transition-transform shadow-lg border-4 border-white bg-white">
+                                <div className="mb-6 relative inline-block">
+                                    <div className="w-32 h-32 rounded-[2rem] overflow-hidden border-4 border-white shadow-xl bg-gray-200 mx-auto">
                                         {member.image ? (
                                             <img
                                                 src={member.image}
                                                 alt={member.name}
-                                                className="w-full h-full object-cover object-top"
+                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                             />
                                         ) : (
-                                            <div className="w-full h-full bg-primary/5 flex items-center justify-center text-primary">
-                                                <User size={60} />
+                                            <div className="w-full h-full flex items-center justify-center bg-gray-100">
+                                                <User size={40} className="text-gray-400" />
                                             </div>
                                         )}
                                     </div>
-                                    <h3 className="text-2xl font-black text-gray-900 text-center mb-1 italic uppercase tracking-tighter">{member.name}</h3>
-                                    <p className="text-primary font-bold uppercase text-xs tracking-widest mb-6 opacity-80">{member.role}</p>
-
-                                    <div className="w-full pt-6 border-t border-gray-100 flex justify-center gap-4">
-                                        <span className="text-[10px] text-gray-400 font-black uppercase tracking-widest flex items-center gap-1">
-                                            <ShieldCheck size={14} className="text-primary" /> Board Member
-                                        </span>
-                                    </div>
                                 </div>
+                                <h3 className="text-xl font-black italic uppercase tracking-tight text-gray-950 leading-none mb-2">{member.name}</h3>
+                                <p className="text-primary font-bold uppercase tracking-[0.2em] text-[10px]">{member.role}</p>
                             </div>
                         ))}
                     </div>
-
-                    {team.length === 0 && (
-                        <div className="py-20 text-center text-gray-900 italic">
-                            <User size={48} className="mx-auto mb-4 opacity-20" />
-                            <p className="text-xl font-black text-gray-950 uppercase tracking-tighter">Board details will be updated here shortly.</p>
-                            <p className="mt-2 font-bold opacity-80 uppercase tracking-widest text-xs">We are currently updating our visionary leadership team.</p>
-                        </div>
-                    )}
-
                 </div>
             </section>
 

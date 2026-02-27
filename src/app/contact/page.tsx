@@ -1,8 +1,29 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Mail, Phone, MapPin, Send, Facebook, Instagram, Twitter } from "lucide-react";
 
 export default function ContactPage() {
+    const [contactInfo, setContactInfo] = useState({
+        email: "academysportsandfinearts@gmail.com",
+        phone: "+91 82978 27196, +91 86875 37688",
+        address: "Hayathnagar, Hyderabad, Telangana, India.",
+        instagram: "https://instagram.com/academysports2017"
+    });
+
+    useEffect(() => {
+        fetch("/api/admin/settings/contact")
+            .then(r => r.json())
+            .then(data => {
+                if (data.email) setContactInfo(data);
+            })
+            .catch(() => { });
+    }, []);
+
+    const phones = contactInfo.phone.split(",").map(p => p.trim());
+
     return (
         <main className="min-h-screen">
             <Navbar />
@@ -32,7 +53,7 @@ export default function ContactPage() {
                                         </div>
                                         <div>
                                             <h4 className="font-black text-lg mb-1 uppercase tracking-tight text-gray-900">Our Location</h4>
-                                            <p className="text-gray-700 italic font-bold">Hayathnagar, Hyderabad,<br />Telangana, India.</p>
+                                            <p className="text-gray-700 italic font-bold whitespace-pre-line">{contactInfo.address}</p>
                                         </div>
                                     </div>
 
@@ -42,7 +63,11 @@ export default function ContactPage() {
                                         </div>
                                         <div>
                                             <h4 className="font-black text-lg mb-1 uppercase tracking-tight text-gray-900">Call Us</h4>
-                                            <p className="text-gray-700 italic font-bold">+91 82978 27196<br />+91 86875 37688</p>
+                                            <p className="text-gray-700 italic font-bold">
+                                                {phones.map((p, i) => (
+                                                    <span key={p}>{p}{i < phones.length - 1 && <br />}</span>
+                                                ))}
+                                            </p>
                                         </div>
                                     </div>
 
@@ -52,7 +77,7 @@ export default function ContactPage() {
                                         </div>
                                         <div>
                                             <h4 className="font-black text-lg mb-1 uppercase tracking-tight text-gray-900">Email Us</h4>
-                                            <p className="text-gray-700 italic font-bold break-all">academysportsandfinearts<br />@gmail.com</p>
+                                            <p className="text-gray-700 italic font-bold break-all">{contactInfo.email}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -64,7 +89,7 @@ export default function ContactPage() {
                                     <a href="#" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:bg-primary hover:text-white transition-all">
                                         <Facebook size={18} />
                                     </a>
-                                    <a href="https://instagram.com/academysports2017" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:bg-primary hover:text-white transition-all">
+                                    <a href={contactInfo.instagram} className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:bg-primary hover:text-white transition-all">
                                         <Instagram size={18} />
                                     </a>
                                     <a href="#" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:bg-primary hover:text-white transition-all">

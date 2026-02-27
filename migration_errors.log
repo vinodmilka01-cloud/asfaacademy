@@ -1,0 +1,20 @@
+Updates error: {
+  "message": "TypeError: fetch failed",
+  "details": "TypeError: fetch failed\n\nCaused by: ConnectTimeoutError: Connect Timeout Error (attempted addresses: 2405:200:1607:2820:41::36:443, 49.44.79.236:443, timeout: 10000ms) (UND_ERR_CONNECT_TIMEOUT)\nConnectTimeoutError: Connect Timeout Error (attempted addresses: 2405:200:1607:2820:41::36:443, 49.44.79.236:443, timeout: 10000ms)\n    at onConnectTimeout (node:internal/deps/undici/undici:1946:23)\n    at Immediate._onImmediate (node:internal/deps/undici/undici:1912:35)\n    at process.processImmediate (node:internal/timers:504:21)",
+  "hint": "",
+  "code": ""
+}
+
+Athletes error: {
+  "message": "TypeError: fetch failed",
+  "details": "TypeError: fetch failed\n\nCaused by: ConnectTimeoutError: Connect Timeout Error (attempted addresses: 2405:200:1607:2820:41::36:443, 49.44.79.236:443, timeout: 10000ms) (UND_ERR_CONNECT_TIMEOUT)\nConnectTimeoutError: Connect Timeout Error (attempted addresses: 2405:200:1607:2820:41::36:443, 49.44.79.236:443, timeout: 10000ms)\n    at onConnectTimeout (node:internal/deps/undici/undici:1946:23)\n    at Immediate._onImmediate (node:internal/deps/undici/undici:1912:35)\n    at process.processImmediate (node:internal/timers:504:21)",
+  "hint": "",
+  "code": ""
+}
+
+Team error: {
+  "message": "TypeError: fetch failed",
+  "details": "TypeError: fetch failed\n\nCaused by: ConnectTimeoutError: Connect Timeout Error (attempted addresses: 2405:200:1607:2820:41::36:443, 49.44.79.236:443, timeout: 10000ms) (UND_ERR_CONNECT_TIMEOUT)\nConnectTimeoutError: Connect Timeout Error (attempted addresses: 2405:200:1607:2820:41::36:443, 49.44.79.236:443, timeout: 10000ms)\n    at onConnectTimeout (node:internal/deps/undici/undici:1946:23)\n    at Immediate._onImmediate (node:internal/deps/undici/undici:1912:35)\n    at process.processImmediate (node:internal/timers:504:21)",
+  "hint": "",
+  "code": ""
+}

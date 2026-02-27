@@ -29,16 +29,18 @@
 - [ ] **Contact Page**: Form and map integration.
 
 ## 5. Admin Panel & Backend
-- [ ] Set up MongoDB connection.
-- [ ] Define Schemas (Athlete, Event, Gallery, TeamMember, User).
-- [ ] Implement Authentication (NextAuth.js or simple JWT).
-- [ ] Build Admin Dashboard UI.
-- [ ] Implementation of CRUD for each module:
-    - Manage Athletes
-    - Manage Events
-    - Manage Gallery
-    - Manage Team
-    - Content Editor
+- [x] Set up Supabase project & tables.
+- [x] Implement Authentication (Password-based session cookie).
+- [x] Create centralized Supabase client utility.
+- [x] Build Admin Dashboard UI with tabs for:
+    - [x] Gallery Manager (Supabase Storage)
+    - [x] Event Updates (Supabase DB)
+    - [x] Sponsor Athletes (Supabase DB)
+    - [x] Team Manager (Supabase DB)
+- [x] Implement full CRUD + Inline Editing for all sections.
+- [/] Data Sync Utility
+    - [/] Create `/api/admin/sync` API for JSON & Storage migration.
+    - [ ] Add "Sync Initial Data" button in Settings tab.
 
 ## 6. SEO & Optimization
 - [ ] Metadata optimization (Title, Meta description).

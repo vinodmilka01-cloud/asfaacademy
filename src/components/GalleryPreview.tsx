@@ -40,7 +40,7 @@ export const GalleryPreview = () => {
                             <img
                                 src={item.img}
                                 alt={item.title}
-                                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-10">
                                 <h4 className="text-white font-black text-xl italic uppercase tracking-tight">{item.title}</h4>

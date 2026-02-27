@@ -1,7 +1,28 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Heart } from "lucide-react";
 
 export const Footer = () => {
+    const [contactInfo, setContactInfo] = useState({
+        email: "academysportsandfinearts@gmail.com",
+        phone: "+91 82978 27196",
+        address: "Hayathnagar, Hyderabad, Telangana, India.",
+        instagram: "https://instagram.com/academysports2017"
+    });
+
+    useEffect(() => {
+        fetch("/api/admin/settings/contact")
+            .then(r => r.json())
+            .then(data => {
+                if (data.email) setContactInfo(data);
+            })
+            .catch(() => { });
+    }, []);
+
+    const firstPhone = contactInfo.phone.split(",")[0].trim();
+
     return (
         <footer className="bg-white text-gray-900 pt-20 pb-10 border-t border-gray-100">
             <div className="container mx-auto px-6">
@@ -30,7 +51,7 @@ export const Footer = () => {
                             <a href="#" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-gray-600">
                                 <Facebook size={18} />
                             </a>
-                            <a href="https://instagram.com/academysports2017" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-gray-600">
+                            <a href={contactInfo.instagram} className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-gray-600">
                                 <Instagram size={18} />
                             </a>
                             <a href="#" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-gray-600">
@@ -57,15 +78,15 @@ export const Footer = () => {
                         <ul className="space-y-4 text-gray-600 font-bold italic">
                             <li className="flex items-start gap-3">
                                 <MapPin className="text-primary mt-1 shrink-0" size={18} />
-                                <span>Hayathnagar, Hyderabad, Telangana, India.</span>
+                                <span>{contactInfo.address}</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone className="text-primary shrink-0" size={18} />
-                                <span>+91 82978 27196</span>
+                                <span>{firstPhone}</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail className="text-primary shrink-0" size={18} />
-                                <span className="break-all">academysportsandfinearts@gmail.com</span>
+                                <span className="break-all">{contactInfo.email}</span>
                             </li>
                         </ul>
                     </div>

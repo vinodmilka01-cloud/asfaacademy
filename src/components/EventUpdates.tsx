@@ -1,12 +1,45 @@
 "use client";
 
-import { useState } from "react";
-import { Calendar, ArrowRight, Award, Trophy, Users, X, CheckCircle2 } from "lucide-react";
+import { useState, useEffect } from "react";
+import { ArrowRight, Award, Trophy, Calendar, X, CheckCircle2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
+
+const iconMap: Record<string, React.ElementType> = {
+    Trophy,
+    Award,
+    Calendar,
+};
+
+interface Update {
+    id: string;
+    title: string;
+    date: string;
+    category: string;
+    description: string;
+    details?: string;
+    coachQuote?: string;
+    icon: string;
+}
 
 export const EventUpdates = () => {
     const [isExpanded, setIsExpanded] = useState(false);
+    const [update, setUpdate] = useState<Update | null>(null);
+
+    useEffect(() => {
+        fetch("/api/admin/updates")
+            .then(r => r.json())
+            .then((data: Update[]) => {
+                if (data && data.length > 0) setUpdate(data[0]);
+            })
+            .catch(() => { });
+    }, []);
+
+    if (!update) return null;
+
+    const IconComponent = iconMap[update.icon] || Trophy;
+    const detailLines = update.details?.split("\n").filter(Boolean) || [];
+    const bulletPoints = detailLines.filter(l => l.startsWith("-")).map(l => l.replace(/^-\s*/, ""));
+    const paragraphs = detailLines.filter(l => !l.startsWith("-"));
 
     return (
         <section className="py-20 bg-white overflow-hidden" id="event-updates">
@@ -39,31 +72,31 @@ export const EventUpdates = () => {
                                     >
                                         <div className="flex justify-center mb-8">
                                             <div className="w-16 h-16 rounded-2xl bg-primary/20 text-primary flex items-center justify-center border border-primary/30 shadow-inner">
-                                                <Trophy size={32} />
+                                                <IconComponent size={32} />
                                             </div>
                                         </div>
 
                                         <div className="mb-6">
-                                            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary block mb-1">Featured Highlight</span>
-                                            <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">March 2024</span>
+                                            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-primary block mb-1">{update.category}</span>
+                                            <span className="text-xs font-bold text-gray-500 uppercase tracking-widest">{update.date}</span>
                                         </div>
 
                                         <h3 className="text-3xl md:text-4xl font-black italic uppercase leading-tight tracking-tighter mb-8 text-white">
-                                            National Para Athletics <span className="text-primary">Achievement</span>
+                                            {update.title}
                                         </h3>
 
                                         <div className="text-lg md:text-xl text-gray-300 italic font-medium leading-relaxed mb-10 max-w-2xl mx-auto">
-                                            <p>
-                                                "Our athletes have secured multiple medals at the National level. From training in rural districts to the podium at National stadiums, the journey of our champions continues to inspire us all."
-                                            </p>
+                                            <p>"{update.description}"</p>
                                         </div>
 
-                                        <button
-                                            onClick={() => setIsExpanded(true)}
-                                            className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs transition-all shadow-xl shadow-primary/20 active:scale-95"
-                                        >
-                                            View Detailed Highlights <ArrowRight size={16} />
-                                        </button>
+                                        {update.details && (
+                                            <button
+                                                onClick={() => setIsExpanded(true)}
+                                                className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-xs transition-all shadow-xl shadow-primary/20 active:scale-95"
+                                            >
+                                                View Detailed Highlights <ArrowRight size={16} />
+                                            </button>
+                                        )}
                                     </motion.div>
                                 ) : (
                                     <motion.div
@@ -80,7 +113,7 @@ export const EventUpdates = () => {
                                                 </div>
                                                 <div>
                                                     <h4 className="text-white font-black italic uppercase tracking-tight text-2xl leading-none">Victory Details</h4>
-                                                    <p className="text-primary text-[10px] uppercase font-black tracking-widest mt-1">Full Report • March 2024</p>
+                                                    <p className="text-primary text-[10px] uppercase font-black tracking-widest mt-1">Full Report • {update.date}</p>
                                                 </div>
                                             </div>
                                             <button
@@ -94,35 +127,30 @@ export const EventUpdates = () => {
                                         <div className="grid md:grid-cols-2 gap-10">
                                             <div className="space-y-6">
                                                 <h5 className="text-white font-bold uppercase tracking-widest text-sm italic">The Achievement</h5>
-                                                <p className="text-gray-300 italic font-medium leading-relaxed">
-                                                    ASFA participated in the 17th National Para Athletics Championship held in Mumbai. Our contingent consisted of 12 athletes from rural backgrounds.
-                                                </p>
-                                                <div className="space-y-4">
-                                                    {[
-                                                        "5 Gold Medals in Track Events",
-                                                        "3 Silver Medals in Field Events",
-                                                        "New State Record in Javelin Throw",
-                                                        "Qualified for Asian Para Games"
-                                                    ].map((point, i) => (
-                                                        <div key={i} className="flex items-center gap-3 text-gray-400">
-                                                            <CheckCircle2 size={16} className="text-primary shrink-0" />
-                                                            <span className="text-sm italic font-medium">{point}</span>
-                                                        </div>
-                                                    ))}
-                                                </div>
+                                                {paragraphs.map((p, i) => (
+                                                    <p key={i} className="text-gray-300 italic font-medium leading-relaxed">{p}</p>
+                                                ))}
+                                                {bulletPoints.length > 0 && (
+                                                    <div className="space-y-3">
+                                                        {bulletPoints.map((point, i) => (
+                                                            <div key={i} className="flex items-center gap-3 text-gray-400">
+                                                                <CheckCircle2 size={16} className="text-primary shrink-0" />
+                                                                <span className="text-sm italic font-medium">{point}</span>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                )}
                                             </div>
 
                                             <div className="space-y-6">
                                                 <h5 className="text-white font-bold uppercase tracking-widest text-sm italic">The Impact</h5>
-                                                <p className="text-gray-400 text-sm italic leading-relaxed">
-                                                    This victory has opened doors for international exposure. Two of our medalists have been selected for the National coaching camp in Bangalore. We are now focusing on the upcoming International meets to represent India globally.
-                                                </p>
-                                                <div className="bg-primary/10 border border-primary/20 p-6 rounded-2xl">
-                                                    <p className="text-xs text-primary font-black uppercase tracking-widest mb-2 italic">Coach's Quote</p>
-                                                    <p className="text-white italic font-medium leading-tight">
-                                                        "Their success is proof that consistent training and rural grit can conquer any stadium in the world."
-                                                    </p>
-                                                </div>
+                                                <p className="text-gray-400 text-sm italic leading-relaxed">{update.description}</p>
+                                                {update.coachQuote && (
+                                                    <div className="bg-primary/10 border border-primary/20 p-6 rounded-2xl">
+                                                        <p className="text-xs text-primary font-black uppercase tracking-widest mb-2 italic">Coach&apos;s Quote</p>
+                                                        <p className="text-white italic font-medium leading-tight">"{update.coachQuote}"</p>
+                                                    </div>
+                                                )}
                                                 <button
                                                     onClick={() => setIsExpanded(false)}
                                                     className="w-full py-4 border-2 border-primary/30 hover:border-primary text-primary font-black uppercase tracking-widest text-[10px] rounded-xl transition-all"

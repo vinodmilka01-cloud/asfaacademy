@@ -1,42 +1,31 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
-import { User, Award, Heart, ArrowLeft, X, Building2, Zap, Copy, Check } from "lucide-react";
+import { Award, ArrowLeft, X, Building2, Copy, Check } from "lucide-react";
 import Link from "next/link";
 
-const athletes = [
-    {
-        name: "M. Shirisha",
-        role: "Para Athlete",
-        achievement: "National Medalist",
-        image: "/m-shirisha.png"
-    },
-    {
-        name: "A. Divya",
-        role: "Para Athlete",
-        achievement: "National Medalist",
-        image: "/a-divya.png"
-    },
-    {
-        name: "D. Yashwanth",
-        role: "Para Athlete",
-        achievement: "All India 7th rank in 400mts",
-        image: "/dhanavath-yashwanth.png"
-    },
-    {
-        name: "Vamshi",
-        role: "Para Athlete",
-        achievement: "State Medals",
-        image: "/vamshi.png"
-    }
-];
+interface Athlete {
+    id: string;
+    name: string;
+    role: string;
+    achievement: string;
+    image: string;
+}
 
 export default function SponsorAthletePage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [copiedField, setCopiedField] = useState<string | null>(null);
+    const [athletes, setAthletes] = useState<Athlete[]>([]);
+
+    useEffect(() => {
+        fetch("/api/admin/athletes")
+            .then(r => r.json())
+            .then(setAthletes)
+            .catch(() => { });
+    }, []);
 
     const bankDetails = {
         accountName: "ACADEMY OF SPORTS AND FINE ARTS",
@@ -81,7 +70,7 @@ export default function SponsorAthletePage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                         {athletes.map((athlete, index) => (
                             <motion.div
-                                key={athlete.name}
+                                key={athlete.id || athlete.name}
                                 initial={{ opacity: 0, y: 30 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.1 }}
@@ -93,7 +82,7 @@ export default function SponsorAthletePage() {
                                             <img
                                                 src={athlete.image}
                                                 alt={athlete.name}
-                                                className="w-full h-auto group-hover:scale-105 transition-transform duration-700"
+                                                className="w-full h-auto object-cover object-top group-hover:scale-105 transition-transform duration-700"
                                             />
                                         </div>
                                         <div className="absolute -bottom-4 -right-4 bg-primary text-white p-4 rounded-2xl shadow-lg">

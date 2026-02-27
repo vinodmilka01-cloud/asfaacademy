@@ -1,0 +1,30 @@
+[
+    {
+        "id": "1",
+        "name": "M. Shirisha",
+        "role": "Para Athlete",
+        "achievement": "National Medalist",
+        "image": "/m-shirisha.png"
+    },
+    {
+        "id": "2",
+        "name": "A. Divya",
+        "role": "Para Athlete",
+        "achievement": "National Medalist",
+        "image": "/a-divya.png"
+    },
+    {
+        "id": "3",
+        "name": "D. Yashwanth",
+        "role": "Para Athlete",
+        "achievement": "All India 7th rank in 400mts",
+        "image": "/dhanavath-yashwanth.png"
+    },
+    {
+        "id": "4",
+        "name": "Vamshi",
+        "role": "Para Athlete",
+        "achievement": "State Medals",
+        "image": "/vamshi.png"
+    }
+]
