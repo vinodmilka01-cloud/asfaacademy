@@ -156,6 +156,7 @@ export default function GalleryPage() {
                                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                                     className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
                                                     priority={index < 3}
+                                                    unoptimized
                                                 />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                                                     <p className="text-white font-black italic uppercase tracking-tight text-lg leading-tight">
