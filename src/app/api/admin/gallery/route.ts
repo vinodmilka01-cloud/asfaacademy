@@ -6,10 +6,6 @@ function isAuthenticated(req: NextRequest) {
 }
 
 export async function GET(req: NextRequest) {
-    if (!isAuthenticated(req)) {
-        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
     const categories = ["national", "deaf-national", "state", "district", "memories", "videos"];
     const result: Record<string, string[]> = {};
 
