@@ -36,19 +36,22 @@ export default function GalleryPage() {
                 const res = await fetch('/api/admin/gallery');
                 const data = await res.json();
 
-                const allItems: GalleryItem[] = [];
-                Object.keys(data).forEach(cat => {
-                    data[cat].forEach((url: string, index: number) => {
-                        const isVideo = url.match(/\.(mp4|mov|webm|avi)$/i);
-                        allItems.push({
-                            id: `${cat}-${index}`,
-                            category: cat,
-                            title: "",
-                            type: isVideo ? "video" : "image",
-                            img: url
-                        });
+                if (data && typeof data === 'object') {
+                    Object.keys(data).forEach(cat => {
+                        if (Array.isArray(data[cat])) {
+                            data[cat].forEach((url: string, index: number) => {
+                                const isVideo = url.match(/\.(mp4|mov|webm|avi)$/i);
+                                allItems.push({
+                                    id: `${cat}-${index}`,
+                                    category: cat,
+                                    title: "",
+                                    type: isVideo ? "video" : "image",
+                                    img: url
+                                });
+                            });
+                        }
                     });
-                });
+                }
                 setItems(allItems);
             } catch (error) {
                 console.error('Error fetching gallery:', error);

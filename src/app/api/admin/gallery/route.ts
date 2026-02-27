@@ -24,7 +24,7 @@ export async function GET(req: NextRequest) {
                 return { cat, files: [] };
             }
 
-            const urls = data.map(file => {
+            const urls = (data || []).map(file => {
                 const { data: { publicUrl } } = supabase.storage
                     .from('gallery')
                     .getPublicUrl(`${cat}/${file.name}`);
