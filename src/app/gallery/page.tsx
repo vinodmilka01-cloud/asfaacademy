@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Camera, Trophy, Users, Video, Play, X, Loader2 } from "lucide-react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navCategories = [
@@ -148,10 +149,13 @@ export default function GalleryPage() {
                                             </div>
                                         ) : (
                                             <>
-                                                <img
+                                                <Image
                                                     src={item.img}
-                                                    alt={item.title}
-                                                    className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                                                    alt={item.title || "ASFA Athlete Achievement"}
+                                                    fill
+                                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                                    className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                                                    priority={index < 3}
                                                 />
                                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                                                     <p className="text-white font-black italic uppercase tracking-tight text-lg leading-tight">

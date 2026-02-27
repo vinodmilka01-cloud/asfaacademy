@@ -10,7 +10,7 @@ export async function GET(req: NextRequest) {
     const result: Record<string, string[]> = {};
 
     try {
-        for (const cat of categories) {
+        const categoryData = await Promise.all(categories.map(async (cat) => {
             const { data, error } = await supabase.storage
                 .from('gallery')
                 .list(cat, {
@@ -21,16 +21,23 @@ export async function GET(req: NextRequest) {
 
             if (error) {
                 console.error(`Error listing ${cat}:`, error);
-                result[cat] = [];
-            } else {
-                result[cat] = data.map(file => {
-                    const { data: { publicUrl } } = supabase.storage
-                        .from('gallery')
-                        .getPublicUrl(`${cat}/${file.name}`);
-                    return publicUrl;
-                });
+                return { cat, files: [] };
             }
-        }
+
+            const urls = data.map(file => {
+                const { data: { publicUrl } } = supabase.storage
+                    .from('gallery')
+                    .getPublicUrl(`${cat}/${file.name}`);
+                return publicUrl;
+            });
+
+            return { cat, files: urls };
+        }));
+
+        categoryData.forEach(({ cat, files }) => {
+            result[cat] = files;
+        });
+
         return NextResponse.json(result);
     } catch (error) {
         console.error('Gallery list error:', error);
