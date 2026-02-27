@@ -21,6 +21,7 @@ const navLinks = [
             { name: "Our Team", href: "/about/team" },
         ],
     },
+    { name: "Updates", href: "/#event-updates" },
     { name: "Gallery", href: "/gallery" },
     { name: "Sports", href: "/sports" },
     { name: "Contact Us", href: "/contact" },

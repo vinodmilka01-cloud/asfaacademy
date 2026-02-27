@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { VisionMission } from "@/components/VisionMission";
 import { Programs } from "@/components/Programs";
+import { EventUpdates } from "@/components/EventUpdates";
 import { FounderSpotlight } from "@/components/FounderSpotlight";
 import { Impact } from "@/components/Impact";
 import { OlympicsPreview } from "@/components/OlympicsPreview";
@@ -20,6 +21,7 @@ export default function Home() {
       <div className="relative z-10">
         <VisionMission />
         <Programs />
+        <EventUpdates />
         <OlympicsPreview />
         <ParalympicsPreview />
         <GalleryPreview />

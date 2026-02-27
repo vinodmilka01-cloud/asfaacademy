@@ -4,39 +4,9 @@ import { User, ShieldCheck, Mail } from "lucide-react";
 
 const team = [
     {
-        name: "Korra Akhila",
-        role: "Static Sick Officer",
-        image: "/korra-akhila.png"
-    },
-    {
-        name: "S. Sagar",
-        role: "Compitition Director",
-        image: "/s-sagar.png"
-    },
-    {
-        name: "Karamtoth Jithendar",
-        role: "Treasury",
-        image: "/karamtoth-jithendar.png"
-    },
-    {
-        name: "Nenavath Vijaya Lakshmi",
-        role: "Joint Secretary",
-        image: "/nenavath-vijaya-lakshmi.png"
-    },
-    {
         name: "Nenavath Ganesh",
         role: "Vice President",
         image: "/nenavath-ganesh.png"
-    },
-    {
-        name: "Banavath Naresh",
-        role: "Secretary of the Organizing Committee",
-        image: "/banavath-naresh.png"
-    },
-    {
-        name: "S Rajesh",
-        role: "organization committee",
-        image: "/s-rajesh.png"
     },
     {
         name: "Vankunavath Revanth",
@@ -44,9 +14,39 @@ const team = [
         image: "/vankunavath-revanth.png"
     },
     {
+        name: "Nenavath Vijaya Lakshmi",
+        role: "Join secretary",
+        image: "/nenavath-vijaya-lakshmi.png"
+    },
+    {
+        name: "Karamtoth Jithendar",
+        role: "Treasury",
+        image: "/karamtoth-jithendar.png"
+    },
+    {
+        name: "G. Sagar",
+        role: "Compation director",
+        image: "/s-sagar.png"
+    },
+    {
+        name: "Banavath Naresh",
+        role: "Organization secretary",
+        image: "/banavath-naresh.png"
+    },
+    {
         name: "Mudavath Vijay",
-        role: "President of the Organizing Committee",
+        role: "Organization chairman",
         image: "/mudavath-vijay.png"
+    },
+    {
+        name: "Korra Akhila",
+        role: "Static Sick Officer",
+        image: "/korra-akhila.png"
+    },
+    {
+        name: "S Rajesh",
+        role: "organization committee",
+        image: "/s-rajesh.png"
     }
 ];
 

@@ -59,22 +59,26 @@ export default function SupportPage() {
                 <div className="container mx-auto px-6">
                     <div className="grid md:grid-cols-3 gap-12">
                         {supportOptions.map((option, index) => (
-                            <motion.div
+                            <Link
+                                href={option.title === "Sponsor an Athlete" ? "/sponsor-athlete" : "#"}
                                 key={option.title}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                                className="p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:shadow-2xl hover:shadow-primary/5 transition-all group"
                             >
-                                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                    <option.icon className="text-primary" size={32} />
-                                </div>
-                                <h3 className="text-2xl font-bold mb-4 text-gray-900">{option.title}</h3>
-                                <p className="text-gray-600 mb-6 leading-relaxed">{option.description}</p>
-                                <div className="pt-6 border-t border-gray-200">
-                                    <span className="text-sm font-bold text-primary italic uppercase tracking-wider">{option.impact}</span>
-                                </div>
-                            </motion.div>
+                                <motion.div
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: index * 0.1 }}
+                                    className="p-8 h-full rounded-3xl bg-gray-50 border border-gray-100 hover:shadow-2xl hover:shadow-primary/5 transition-all group"
+                                >
+                                    <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                                        <option.icon className="text-primary" size={32} />
+                                    </div>
+                                    <h3 className="text-2xl font-bold mb-4 text-gray-900">{option.title}</h3>
+                                    <p className="text-gray-600 mb-6 leading-relaxed">{option.description}</p>
+                                    <div className="pt-6 border-t border-gray-200">
+                                        <span className="text-sm font-bold text-primary italic uppercase tracking-wider">{option.impact}</span>
+                                    </div>
+                                </motion.div>
+                            </Link>
                         ))}
                     </div>
                 </div>
@@ -85,7 +89,7 @@ export default function SupportPage() {
                 <div className="container mx-auto px-6">
                     <div className="max-w-5xl mx-auto">
                         <div className="text-center mb-16 px-4">
-                            <h2 className="text-4xl font-black mb-4 italic uppercase tracking-tight">Direct <span className="text-primary text-5xl">Contribution</span></h2>
+                            <h2 className="text-4xl font-black mb-4 italic uppercase tracking-tight text-gray-900">Direct <span className="text-primary text-5xl">Contribution</span></h2>
                             <p className="text-gray-500 italic uppercase tracking-widest font-bold text-sm">Safe & Secure Bank Transfers</p>
                         </div>
 

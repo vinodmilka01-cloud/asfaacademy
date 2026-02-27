@@ -116,16 +116,7 @@ export default function ContactPage() {
                 </div>
             </section>
 
-            {/* Map Placeholder */}
-            <section className="h-[500px] bg-gray-200 grayscale contrast-125">
-                <div className="w-full h-full flex items-center justify-center bg-gray-900/10">
-                    <div className="text-center p-12 glass-morphism rounded-3xl border-white/20">
-                        <MapPin size={48} className="text-primary mx-auto mb-4" />
-                        <h3 className="text-2xl font-black italic uppercase mb-2 text-gray-950">Google Maps Integration</h3>
-                        <p className="text-gray-950 italic font-bold">Academy Location: Hayathnagar, Hyderabad</p>
-                    </div>
-                </div>
-            </section>
+
 
             <Footer />
         </main>
