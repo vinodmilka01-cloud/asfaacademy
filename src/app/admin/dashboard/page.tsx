@@ -335,9 +335,9 @@ export default function AdminDashboard() {
                                 <p className="font-bold">No files uploaded yet</p>
                             </div>
                         ) : (
-                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                            <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-3">
                                 {(uploads[selectedCategory] || []).map(file => (
-                                    <div key={file} className="group relative bg-gray-800 rounded-2xl overflow-hidden border border-gray-700 aspect-[3/4]">
+                                    <div key={file} className="group relative bg-gray-800 rounded-xl overflow-hidden border border-gray-700 aspect-square">
                                         {isVideo(file) ? (
                                             <div className="w-full h-full flex flex-col items-center justify-center">
                                                 <Video size={32} className="text-primary mb-2" />
