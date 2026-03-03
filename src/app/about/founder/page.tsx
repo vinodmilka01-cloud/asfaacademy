@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Award, Heart, GraduationCap, MapPin, Quote, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function FounderPage() {
     return (
@@ -26,7 +27,7 @@ export default function FounderPage() {
                     </div>
                     <div className="relative" data-aos="fade-left">
                         <div className="w-full aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl relative">
-                            <img src="/founder.png" alt="Founder" className="w-full h-full object-cover object-top" />
+                            <Image src="/founder.png" alt="Founder" fill priority className="object-cover object-top" />
                             <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
                         </div>
                     </div>

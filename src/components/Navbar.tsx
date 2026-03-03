@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import Image from "next/image";
 
 function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
@@ -48,11 +49,15 @@ export const Navbar = () => {
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
                 <Link href="/" className="flex items-center gap-2 sm:gap-3 shrink-0">
-                    <img
-                        src="/logo.png"
-                        alt="ASFA Logo"
-                        className="h-8 sm:h-10 w-auto object-contain"
-                    />
+                    <div className="relative h-8 sm:h-10 w-10 sm:w-12">
+                        <Image
+                            src="/logo.png"
+                            alt="ASFA Logo"
+                            fill
+                            priority
+                            className="object-contain"
+                        />
+                    </div>
                     <div className="flex flex-col">
                         <span className="font-bold text-base sm:text-lg leading-tight text-gray-900">
                             ASFA

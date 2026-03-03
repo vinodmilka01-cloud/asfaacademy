@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { User } from "lucide-react";
 import { supabase } from "@/lib/supabase";
+import Image from "next/image";
 
 interface TeamMember {
     id: string;
@@ -55,12 +56,13 @@ export default async function TeamPage() {
                                 className="group relative bg-gray-50 rounded-[3rem] p-8 border border-gray-100 hover:bg-white hover:shadow-2xl transition-all duration-500 text-center"
                             >
                                 <div className="mb-6 relative inline-block">
-                                    <div className="w-32 h-32 rounded-[2rem] overflow-hidden border-4 border-white shadow-xl bg-gray-200 mx-auto">
+                                    <div className="w-32 h-32 rounded-[2rem] overflow-hidden border-4 border-white shadow-xl bg-gray-200 mx-auto relative">
                                         {member.image ? (
-                                            <img
+                                            <Image
                                                 src={member.image}
                                                 alt={member.name}
-                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                                fill
+                                                className="object-cover group-hover:scale-105 transition-transform duration-500"
                                             />
                                         ) : (
                                             <div className="w-full h-full flex items-center justify-center bg-gray-100">

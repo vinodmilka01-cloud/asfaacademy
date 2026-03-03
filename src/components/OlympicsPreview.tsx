@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Trophy, Target, ArrowRight, Star } from "lucide-react";
+import Image from "next/image";
 
 export const OlympicsPreview = () => {
     return (
@@ -38,11 +39,12 @@ export const OlympicsPreview = () => {
 
                     <div className="lg:w-1/2" data-aos="fade-left">
                         <div className="relative">
-                            <div className="w-full aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl">
-                                <img
+                            <div className="w-full aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative">
+                                <Image
                                     src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&q=80"
                                     alt="Olympic athlete training"
-                                    className="w-full h-full object-cover"
+                                    fill
+                                    className="object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent" />
                             </div>

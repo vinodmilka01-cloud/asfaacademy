@@ -10,11 +10,12 @@ export const FounderSpotlight = () => {
             <div className="container mx-auto px-6">
                 <div className="flex flex-col lg:flex-row gap-10 md:gap-16 items-center">
                     <div className="w-full lg:w-1/2 relative" data-aos="fade-right">
-                        <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl shadow-gray-200 group">
-                            <img
+                        <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl shadow-gray-200 group aspect-[4/5]">
+                            <Image
                                 src="/founder.png"
                                 alt="Nenavath Vinod"
-                                className="w-full aspect-[4/5] object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                                fill
+                                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-60" />
                             <div className="absolute bottom-10 left-10 text-white">

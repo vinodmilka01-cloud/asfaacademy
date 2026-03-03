@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Accessibility, Home, ArrowRight, ShieldCheck, Heart } from "lucide-react";
+import Image from "next/image";
 
 export const ParalympicsPreview = () => {
     return (
@@ -40,11 +41,12 @@ export const ParalympicsPreview = () => {
 
                     <div className="lg:w-1/2" data-aos="fade-right">
                         <div className="relative">
-                            <div className="rounded-[3rem] overflow-hidden shadow-2xl border-8 border-gray-50">
-                                <img
+                            <div className="rounded-[3rem] overflow-hidden shadow-2xl border-8 border-gray-50 aspect-[4/3] relative">
+                                <Image
                                     src="/door-to-door.jpg"
                                     alt="Para athlete training"
-                                    className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
+                                    fill
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                             </div>
                             {/* Absolute badge */}

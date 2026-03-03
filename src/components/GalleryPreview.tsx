@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowRight, Camera } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const previewImages = [
     { id: "m1", title: "A. Divya - National Medalist", img: "/a-divya.png" },
@@ -37,10 +38,13 @@ export const GalleryPreview = () => {
                             data-aos-delay={i * 100}
                             className="group relative aspect-[3/4] rounded-[3rem] overflow-hidden shadow-2xl cursor-pointer bg-slate-50 border border-gray-100"
                         >
-                            <img
+                            <Image
                                 src={item.img}
                                 alt={item.title}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 33vw"
                                 className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                                priority={i === 0}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-10">
                                 <h4 className="text-white font-black text-xl italic uppercase tracking-tight">{item.title}</h4>

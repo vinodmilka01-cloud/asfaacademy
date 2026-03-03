@@ -2,8 +2,9 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import {
-    LogOut, Upload, Trash2, Image, Video, Trophy, Users,
+    LogOut, Upload, Trash2, Image as ImageIcon, Video, Trophy, Users,
     Plus, X, CheckCircle2, AlertCircle, ChevronDown, Loader2,
     FileText, User, Pencil, Save, Settings, Phone, Mail, MapPin, Instagram, RefreshCw
 } from "lucide-react";
@@ -258,7 +259,7 @@ export default function AdminDashboard() {
     const isVideo = (p: string) => /\.(mp4|mov|webm|avi)$/i.test(p);
 
     const tabs = [
-        { id: "gallery" as Tab, label: "Gallery", icon: Image },
+        { id: "gallery" as Tab, label: "Gallery", icon: ImageIcon },
         { id: "updates" as Tab, label: "Event Updates", icon: FileText },
         { id: "athletes" as Tab, label: "Sponsor Athletes", icon: Trophy },
         { id: "team" as Tab, label: "Team", icon: Users },
@@ -330,7 +331,7 @@ export default function AdminDashboard() {
                         </h3>
                         {(uploads[selectedCategory] || []).length === 0 ? (
                             <div className="text-center py-16 text-gray-700 border-2 border-dashed border-gray-800 rounded-[2rem]">
-                                <Image size={40} className="mx-auto mb-3 opacity-30" />
+                                <ImageIcon size={40} className="mx-auto mb-3 opacity-30" />
                                 <p className="font-bold">No files uploaded yet</p>
                             </div>
                         ) : (
@@ -342,7 +343,15 @@ export default function AdminDashboard() {
                                                 <Video size={32} className="text-primary mb-2" />
                                                 <p className="text-xs text-gray-400 px-2 truncate w-full text-center">{file.split("/").pop()}</p>
                                             </div>
-                                        ) : <img src={file} alt="" className="w-full h-full object-cover object-top" />}
+                                        ) : (
+                                            <Image
+                                                src={file}
+                                                alt=""
+                                                fill
+                                                sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
+                                                className="w-full h-full object-cover object-top"
+                                            />
+                                        )}
                                         <button onClick={() => handleDeleteFile(file)}
                                             className="absolute top-2 right-2 p-1.5 bg-red-500/80 hover:bg-red-500 text-white rounded-full opacity-0 group-hover:opacity-100 transition-all">
                                             <Trash2 size={14} />
@@ -459,7 +468,9 @@ export default function AdminDashboard() {
                                         {(athleteForm.image) && (
                                             <div className="flex items-center gap-2 text-green-400 text-sm font-bold">
                                                 <CheckCircle2 size={16} />
-                                                <img src={athleteForm.image} alt="" className="w-10 h-10 rounded-lg object-cover border border-gray-700" />
+                                                <div className="relative w-10 h-10 rounded-lg overflow-hidden border border-gray-700">
+                                                    <Image src={athleteForm.image} alt="" fill className="object-cover" />
+                                                </div>
                                             </div>
                                         )}
                                     </div>
@@ -476,8 +487,8 @@ export default function AdminDashboard() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                             {athletes.map(a => (
                                 <div key={a.id} className="group relative bg-gray-900 rounded-2xl p-5 border border-gray-800 flex items-center gap-4">
-                                    <div className="w-16 h-16 rounded-xl overflow-hidden bg-gray-800 shrink-0">
-                                        {a.image ? <img src={a.image} alt={a.name} className="w-full h-full object-cover object-top" /> : <User size={24} className="m-auto text-gray-600 mt-4" />}
+                                    <div className="w-16 h-16 rounded-xl overflow-hidden bg-gray-800 shrink-0 relative">
+                                        {a.image ? <Image src={a.image} alt={a.name} fill className="object-cover object-top" /> : <User size={24} className="m-auto text-gray-600 mt-4" />}
                                     </div>
                                     <div className="min-w-0">
                                         <p className="font-black italic uppercase tracking-tight text-white text-sm leading-none mb-1 truncate">{a.name}</p>
@@ -530,7 +541,9 @@ export default function AdminDashboard() {
                                         {memberForm.image && (
                                             <div className="flex items-center gap-2 text-green-400 text-sm font-bold">
                                                 <CheckCircle2 size={16} />
-                                                <img src={memberForm.image} alt="" className="w-10 h-10 rounded-lg object-cover border border-gray-700" />
+                                                <div className="relative w-10 h-10 rounded-lg overflow-hidden border border-gray-700">
+                                                    <Image src={memberForm.image} alt="" fill className="object-cover" />
+                                                </div>
                                             </div>
                                         )}
                                     </div>
@@ -547,8 +560,8 @@ export default function AdminDashboard() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                             {team.map(m => (
                                 <div key={m.id} className="group relative bg-gray-900 rounded-2xl p-5 border border-gray-800 flex items-center gap-4">
-                                    <div className="w-16 h-16 rounded-xl overflow-hidden bg-gray-800 shrink-0">
-                                        {m.image ? <img src={m.image} alt={m.name} className="w-full h-full object-cover object-top" /> : <User size={24} className="m-auto text-gray-600 mt-4" />}
+                                    <div className="w-16 h-16 rounded-xl overflow-hidden bg-gray-800 shrink-0 relative">
+                                        {m.image ? <Image src={m.image} alt={m.name} fill className="object-cover object-top" /> : <User size={24} className="m-auto text-gray-600 mt-4" />}
                                     </div>
                                     <div className="min-w-0">
                                         <p className="font-black italic uppercase tracking-tight text-white text-sm leading-none mb-1 truncate">{m.name}</p>

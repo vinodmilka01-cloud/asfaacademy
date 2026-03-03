@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 import { Award, ArrowLeft, X, Building2, Copy, Check, Heart, Zap } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Athlete {
     id: string;
@@ -78,11 +79,12 @@ export default function SponsorAthletePage() {
                             >
                                 <div className="grid md:grid-cols-2 gap-10 items-center">
                                     <div className="relative">
-                                        <div className="rounded-[2rem] overflow-hidden shadow-xl border-4 border-white bg-gray-200">
-                                            <img
+                                        <div className="rounded-[2rem] overflow-hidden shadow-xl border-4 border-white bg-gray-200 aspect-[3/4] relative">
+                                            <Image
                                                 src={athlete.image}
                                                 alt={athlete.name}
-                                                className="w-full h-auto object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                                                fill
+                                                className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                                             />
                                         </div>
                                         <div className="absolute -bottom-4 -right-4 bg-primary text-white p-4 rounded-2xl shadow-lg">

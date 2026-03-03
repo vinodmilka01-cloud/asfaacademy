@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
+import fs from "fs";
+import path from "path";
 
 function isAuthenticated(req: NextRequest) {
     return req.cookies.get("asfa_admin_session")?.value === "authenticated";
@@ -10,28 +12,53 @@ export async function GET(req: NextRequest) {
     const result: Record<string, string[]> = {};
 
     try {
+        console.log('Fetching gallery categories from Supabase...');
         const categoryData = await Promise.all(categories.map(async (cat) => {
-            const { data, error } = await supabase.storage
-                .from('gallery')
-                .list(cat, {
-                    limit: 100,
-                    offset: 0,
-                    sortBy: { column: 'name', order: 'desc' }
-                });
+            try {
+                const { data, error } = await supabase.storage
+                    .from('gallery')
+                    .list(cat, {
+                        limit: 100,
+                        offset: 0,
+                        sortBy: { column: 'name', order: 'desc' }
+                    });
 
-            if (error) {
-                console.error(`Error listing ${cat}:`, error);
-                return { cat, files: [] };
+                if (!error && data && data.length > 0) {
+                    const urls = data.map(file => {
+                        const { data: { publicUrl } } = supabase.storage
+                            .from('gallery')
+                            .getPublicUrl(`${cat}/${file.name}`);
+                        return publicUrl;
+                    });
+                    return { cat, files: urls };
+                }
+            } catch (e) {
+                console.error(`Supabase fetch failed for ${cat}, using local fallback`);
             }
 
-            const urls = (data || []).map(file => {
-                const { data: { publicUrl } } = supabase.storage
-                    .from('gallery')
-                    .getPublicUrl(`${cat}/${file.name}`);
-                return publicUrl;
-            });
+            // --- Local Fallback ---
+            const publicDir = path.join(process.cwd(), 'public');
+            try {
+                const files = fs.readdirSync(publicDir);
+                const localFiles = files.filter(f => {
+                    // Match files starting with category prefix (e.g. "national-", "state-")
+                    const prefix = cat === "deaf-national" ? "deaf-national" : cat;
+                    const isMatch = f.startsWith(prefix);
 
-            return { cat, files: urls };
+                    // Special case for videos: match if file contains "video" or has video extension
+                    if (cat === "videos") {
+                        return (f.toLowerCase().includes("video") || f.toLowerCase().includes("vlog")) && /\.(mp4|mov|webm|avi)$/i.test(f);
+                    }
+
+                    return isMatch && /\.(png|jpg|jpeg|webp)$/i.test(f);
+                }).map(f => `/${f}`);
+
+                console.log(`Fallback for ${cat}: found ${localFiles.length} files`);
+                return { cat, files: localFiles };
+            } catch (fsError) {
+                console.error(`Local fallback failed for ${cat}:`, fsError);
+                return { cat, files: [] };
+            }
         }));
 
         categoryData.forEach(({ cat, files }) => {
@@ -40,7 +67,7 @@ export async function GET(req: NextRequest) {
 
         return NextResponse.json(result);
     } catch (error) {
-        console.error('Gallery list error:', error);
+        console.error('Gallery API error:', error);
         return NextResponse.json({}, { status: 500 });
     }
 }
