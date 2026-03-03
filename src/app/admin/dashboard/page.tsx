@@ -276,8 +276,14 @@ export default function AdminDashboard() {
                 const updated = await res.json();
                 setContactInfo(updated);
                 setSettingsMsg({ type: "success", text: "Contact details updated!" });
-            } else throw new Error();
-        } catch { setSettingsMsg({ type: "error", text: "Failed to update." }); }
+            } else {
+                const errData = await res.json().catch(() => ({}));
+                const errMsg = errData?.error || `Server error (${res.status})`;
+                setSettingsMsg({ type: "error", text: errMsg });
+            }
+        } catch (err: any) {
+            setSettingsMsg({ type: "error", text: err?.message || "Network error – could not reach server." });
+        }
         finally { setSettingsSaving(false); }
     };
 
