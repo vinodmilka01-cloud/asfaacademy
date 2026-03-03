@@ -129,7 +129,7 @@ export default function GalleryPage() {
                             <p className="text-gray-400 text-lg">No items found in this category.</p>
                         </div>
                     ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
                             <AnimatePresence mode="popLayout">
                                 {filteredItems.map((item, index) => (
                                     <motion.div
@@ -139,7 +139,7 @@ export default function GalleryPage() {
                                         animate={{ opacity: 1, scale: 1 }}
                                         exit={{ opacity: 0, scale: 0.9 }}
                                         transition={{ duration: 0.3 }}
-                                        className={`group relative rounded-[2.5rem] overflow-hidden bg-gray-100 ${item.category === 'videos' ? 'aspect-[9/16]' : 'aspect-[3/4]'
+                                        className={`group relative rounded-2xl overflow-hidden bg-gray-100 ${item.category === 'videos' ? 'aspect-[9/16]' : 'aspect-square'
                                             }`}
                                     >
                                         {item.category === 'videos' ? (
@@ -157,16 +157,16 @@ export default function GalleryPage() {
                                                     src={item.img}
                                                     alt={item.title || "ASFA Athlete Achievement"}
                                                     fill
-                                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 20vw"
                                                     className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
-                                                    priority={index < 3}
+                                                    priority={index < 6}
                                                 />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                                                    <p className="text-white font-black italic uppercase tracking-tight text-lg leading-tight">
-                                                        {item.title || "ASFA Athlete Achievement"}
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4">
+                                                    <p className="text-white font-black italic uppercase tracking-tight text-sm leading-tight">
+                                                        {item.title || "ASFA Achievement"}
                                                     </p>
-                                                    <div className="mt-4 flex items-center gap-2">
-                                                        <span className="bg-primary/20 backdrop-blur-md text-primary text-[10px] font-black px-3 py-1 rounded-full border border-primary/30 uppercase tracking-widest">
+                                                    <div className="mt-2 flex items-center gap-2">
+                                                        <span className="bg-primary/20 backdrop-blur-md text-primary text-[8px] font-black px-2 py-0.5 rounded-full border border-primary/30 uppercase tracking-widest">
                                                             {navCategories.find(c => c.id === item.category)?.name}
                                                         </span>
                                                     </div>
