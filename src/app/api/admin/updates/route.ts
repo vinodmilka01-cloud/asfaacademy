@@ -42,17 +42,25 @@ export async function POST(req: NextRequest) {
     }
     try {
         const body = await req.json();
+        const dbPayload = mapToDB(body);
+        console.log('Admin Updates: Attempting POST with payload:', dbPayload);
+
         const { data, error } = await supabase
             .from('updates')
-            .insert([mapToDB(body)])
+            .insert([dbPayload])
             .select()
             .single();
 
-        if (error) throw error;
+        if (error) {
+            console.error('Supabase POST error:', error);
+            return NextResponse.json({ error: error.message }, { status: 500 });
+        }
+
+        console.log('Admin Updates: POST success');
         return NextResponse.json(mapFromDB(data), { status: 201 });
-    } catch (error) {
-        console.error('Supabase insert error:', error);
-        return NextResponse.json({ error: "Failed to create update" }, { status: 500 });
+    } catch (error: any) {
+        console.error('API POST error:', error);
+        return NextResponse.json({ error: error.message || "Failed to create update" }, { status: 500 });
     }
 }
 
@@ -63,18 +71,26 @@ export async function PUT(req: NextRequest) {
     try {
         const body = await req.json();
         const { id, ...updateData } = body;
+        const dbPayload = mapToDB(updateData);
+        console.log(`Admin Updates: Attempting PUT for ID ${id} with payload:`, dbPayload);
+
         const { data, error } = await supabase
             .from('updates')
-            .update(mapToDB(updateData))
+            .update(dbPayload)
             .eq('id', id)
             .select()
             .single();
 
-        if (error) throw error;
+        if (error) {
+            console.error('Supabase PUT error:', error);
+            return NextResponse.json({ error: error.message }, { status: 500 });
+        }
+
+        console.log('Admin Updates: PUT success');
         return NextResponse.json(mapFromDB(data));
-    } catch (error) {
-        console.error('Supabase update error:', error);
-        return NextResponse.json({ error: "Failed to update" }, { status: 500 });
+    } catch (error: any) {
+        console.error('API PUT error:', error);
+        return NextResponse.json({ error: error.message || "Failed to update" }, { status: 500 });
     }
 }
 
