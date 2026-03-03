@@ -129,7 +129,7 @@ export default function GalleryPage() {
                             <p className="text-gray-400 text-lg">No items found in this category.</p>
                         </div>
                     ) : (
-                        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 2xl:grid-cols-12 gap-2 md:gap-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
                             <AnimatePresence mode="popLayout">
                                 {filteredItems.map((item, index) => (
                                     <motion.div
@@ -139,7 +139,7 @@ export default function GalleryPage() {
                                         animate={{ opacity: 1, scale: 1 }}
                                         exit={{ opacity: 0, scale: 0.9 }}
                                         transition={{ duration: 0.3 }}
-                                        className={`group relative rounded-xl overflow-hidden bg-gray-100 ${item.category === 'videos' ? 'aspect-[9/16]' : 'aspect-square'
+                                        className={`group relative rounded-[2rem] overflow-hidden bg-gray-100 ${item.category === 'videos' ? 'aspect-[9/16]' : 'aspect-[4/5]'
                                             }`}
                                     >
                                         {item.category === 'videos' ? (
@@ -157,17 +157,17 @@ export default function GalleryPage() {
                                                     src={item.img}
                                                     alt={item.title || "ASFA Athlete Achievement"}
                                                     fill
-                                                    sizes="(max-width: 640px) 50vw, (max-width: 768px) 25vw, (max-width: 1024px) 16vw, 10vw"
+                                                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                                                     className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
-                                                    priority={index < 12}
+                                                    priority={index < 4}
                                                 />
-                                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-2">
-                                                    <p className="text-white font-black italic uppercase tracking-tighter text-[10px] leading-none mb-1">
-                                                        {item.title || "ASFA"}
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                                    <p className="text-white font-black italic uppercase tracking-tight text-xl leading-tight">
+                                                        {item.title || "ASFA Achievement"}
                                                     </p>
-                                                    <div className="flex items-center">
-                                                        <span className="bg-primary/30 backdrop-blur-md text-primary text-[6px] font-black px-1.5 py-0.5 rounded-full border border-primary/40 uppercase tracking-tighter">
-                                                            {navCategories.find(c => c.id === item.category)?.name.split(' ')[0]}
+                                                    <div className="mt-4 flex items-center gap-2">
+                                                        <span className="bg-primary/20 backdrop-blur-md text-primary text-[10px] font-black px-3 py-1 rounded-full border border-primary/30 uppercase tracking-widest">
+                                                            {navCategories.find(c => c.id === item.category)?.name}
                                                         </span>
                                                     </div>
                                                 </div>
