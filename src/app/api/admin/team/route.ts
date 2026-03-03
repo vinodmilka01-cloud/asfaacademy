@@ -29,17 +29,24 @@ export async function POST(req: NextRequest) {
     try {
         const body = await req.json();
         const { id, ...memberData } = body;
+        console.log('Admin Team: Attempting POST with payload:', memberData);
+
         const { data, error } = await supabase
             .from('team')
             .insert([memberData])
             .select()
             .single();
 
-        if (error) throw error;
+        if (error) {
+            console.error('Supabase Team POST error:', error);
+            return NextResponse.json({ error: error.message }, { status: 500 });
+        }
+
+        console.log('Admin Team: POST success');
         return NextResponse.json(data, { status: 201 });
-    } catch (error) {
-        console.error('Supabase insert error:', error);
-        return NextResponse.json({ error: "Failed to create team member" }, { status: 500 });
+    } catch (error: any) {
+        console.error('API Team POST error:', error);
+        return NextResponse.json({ error: error.message || "Failed to create team member" }, { status: 500 });
     }
 }
 
@@ -50,6 +57,8 @@ export async function PUT(req: NextRequest) {
     try {
         const body = await req.json();
         const { id, ...updateData } = body;
+        console.log(`Admin Team: Attempting PUT for ID ${id} with payload:`, updateData);
+
         const { data, error } = await supabase
             .from('team')
             .update(updateData)
@@ -57,11 +66,16 @@ export async function PUT(req: NextRequest) {
             .select()
             .single();
 
-        if (error) throw error;
+        if (error) {
+            console.error('Supabase Team PUT error:', error);
+            return NextResponse.json({ error: error.message }, { status: 500 });
+        }
+
+        console.log('Admin Team: PUT success');
         return NextResponse.json(data);
-    } catch (error) {
-        console.error('Supabase update error:', error);
-        return NextResponse.json({ error: "Failed to update" }, { status: 500 });
+    } catch (error: any) {
+        console.error('API Team PUT error:', error);
+        return NextResponse.json({ error: error.message || "Failed to update" }, { status: 500 });
     }
 }
 

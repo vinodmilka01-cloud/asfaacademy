@@ -28,18 +28,25 @@ export async function POST(req: NextRequest) {
     }
     try {
         const body = await req.json();
-        const { id, ...athleteData } = body; // remove id if it exists
+        const { id, ...athleteData } = body;
+        console.log('Admin Athletes: Attempting POST with payload:', athleteData);
+
         const { data, error } = await supabase
             .from('athletes')
             .insert([athleteData])
             .select()
             .single();
 
-        if (error) throw error;
+        if (error) {
+            console.error('Supabase Athletes POST error:', error);
+            return NextResponse.json({ error: error.message }, { status: 500 });
+        }
+
+        console.log('Admin Athletes: POST success');
         return NextResponse.json(data, { status: 201 });
-    } catch (error) {
-        console.error('Supabase insert error:', error);
-        return NextResponse.json({ error: "Failed to create athlete" }, { status: 500 });
+    } catch (error: any) {
+        console.error('API Athletes POST error:', error);
+        return NextResponse.json({ error: error.message || "Failed to create athlete" }, { status: 500 });
     }
 }
 
@@ -50,6 +57,8 @@ export async function PUT(req: NextRequest) {
     try {
         const body = await req.json();
         const { id, ...updateData } = body;
+        console.log(`Admin Athletes: Attempting PUT for ID ${id} with payload:`, updateData);
+
         const { data, error } = await supabase
             .from('athletes')
             .update(updateData)
@@ -57,11 +66,16 @@ export async function PUT(req: NextRequest) {
             .select()
             .single();
 
-        if (error) throw error;
+        if (error) {
+            console.error('Supabase Athletes PUT error:', error);
+            return NextResponse.json({ error: error.message }, { status: 500 });
+        }
+
+        console.log('Admin Athletes: PUT success');
         return NextResponse.json(data);
-    } catch (error) {
-        console.error('Supabase update error:', error);
-        return NextResponse.json({ error: "Failed to update" }, { status: 500 });
+    } catch (error: any) {
+        console.error('API Athletes PUT error:', error);
+        return NextResponse.json({ error: error.message || "Failed to update" }, { status: 500 });
     }
 }
 

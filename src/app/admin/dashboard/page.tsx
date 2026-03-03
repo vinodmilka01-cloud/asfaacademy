@@ -151,13 +151,20 @@ export default function AdminDashboard() {
             else setUpdates(prev => [saved, ...prev]);
             cancelUpdateForm();
             setUpdatesMsg({ type: "success", text: editingUpdate ? "Update saved!" : "Update posted!" });
-        } else setUpdatesMsg({ type: "error", text: "Failed to save." });
+        } else {
+            const err = await res.json();
+            setUpdatesMsg({ type: "error", text: err.error || "Failed to save." });
+        }
     };
 
     const handleDeleteUpdate = async (id: string) => {
         if (!confirm("Delete this update?")) return;
-        await fetch("/api/admin/updates", { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id }) });
-        setUpdates(prev => prev.filter(u => u.id !== id));
+        const res = await fetch("/api/admin/updates", { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id }) });
+        if (res.ok) setUpdates(prev => prev.filter(u => u.id !== id));
+        else {
+            const err = await res.json();
+            setUpdatesMsg({ type: "error", text: err.error || "Delete failed." });
+        }
     };
 
     // --- Athletes ---

@@ -24,9 +24,15 @@ export async function POST(req: NextRequest) {
             const athletesData = JSON.parse(await fs.readFile(path.join(rootPath, "src/data/athletes.json"), "utf8"));
             for (const item of athletesData) {
                 const { id, ...data } = item;
-                const { error } = await supabase.from("athletes").upsert([data], { onConflict: "name" });
-                if (error) logs.push(`Error syncing athlete ${data.name}: ${error.message}`);
-                else logs.push(`Synced athlete: ${data.name}`);
+                console.log(`Sync: Attempting upsert for athlete ${data.name}`);
+                const { data: upsertData, error } = await supabase.from("athletes").upsert([data], { onConflict: "name" }).select();
+                if (error) {
+                    console.error(`Sync error for athlete ${data.name}:`, error);
+                    logs.push(`Error syncing athlete ${data.name}: ${error.message}`);
+                } else {
+                    console.log(`Sync success for athlete ${data.name}:`, upsertData);
+                    logs.push(`Synced athlete: ${data.name}`);
+                }
             }
         } catch (e: any) { logs.push(`Athletes file error: ${e.message}`); }
 
@@ -36,9 +42,15 @@ export async function POST(req: NextRequest) {
             const teamData = JSON.parse(await fs.readFile(path.join(rootPath, "src/data/team.json"), "utf8"));
             for (const item of teamData) {
                 const { id, ...data } = item;
-                const { error } = await supabase.from("team").upsert([data], { onConflict: "name" });
-                if (error) logs.push(`Error syncing team member ${data.name}: ${error.message}`);
-                else logs.push(`Synced team member: ${data.name}`);
+                console.log(`Sync: Attempting upsert for team member ${data.name}`);
+                const { data: upsertData, error } = await supabase.from("team").upsert([data], { onConflict: "name" }).select();
+                if (error) {
+                    console.error(`Sync error for team member ${data.name}:`, error);
+                    logs.push(`Error syncing team member ${data.name}: ${error.message}`);
+                } else {
+                    console.log(`Sync success for team member ${data.name}:`, upsertData);
+                    logs.push(`Synced team member: ${data.name}`);
+                }
             }
         } catch (e: any) { logs.push(`Team file error: ${e.message}`); }
 
@@ -49,9 +61,15 @@ export async function POST(req: NextRequest) {
             for (const item of updatesData) {
                 const { id, coachQuote, ...rest } = item;
                 const data = { ...rest, coach_quote: coachQuote };
-                const { error } = await supabase.from("updates").upsert([data], { onConflict: "title" });
-                if (error) logs.push(`Error syncing update ${data.title}: ${error.message}`);
-                else logs.push(`Synced update: ${data.title}`);
+                console.log(`Sync: Attempting upsert for update ${data.title}`);
+                const { data: upsertData, error } = await supabase.from("updates").upsert([data], { onConflict: "title" }).select();
+                if (error) {
+                    console.error(`Sync error for update ${data.title}:`, error);
+                    logs.push(`Error syncing update ${data.title}: ${error.message}`);
+                } else {
+                    console.log(`Sync success for update ${data.title}:`, upsertData);
+                    logs.push(`Synced update: ${data.title}`);
+                }
             }
         } catch (e: any) { logs.push(`Updates file error: ${e.message}`); }
 
