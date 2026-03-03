@@ -80,10 +80,23 @@ export async function DELETE(req: NextRequest) {
     }
 
     try {
-        const { filePath } = await req.json(); // This is now a public URL from Supabase
+        const { filePath } = await req.json();
 
-        // Extract bucket and relative path from public URL
-        // Example URL: https://...supabase.co/storage/v1/object/public/gallery/national/image.jpg
+        // Case 1: Local File Deletion (starts with /)
+        if (filePath.startsWith('/')) {
+            if (process.env.NODE_ENV !== 'development') {
+                return NextResponse.json({ error: "Local files can only be deleted in development mode" }, { status: 403 });
+            }
+
+            const localPath = path.join(process.cwd(), 'public', filePath.substring(1));
+            if (fs.existsSync(localPath)) {
+                fs.unlinkSync(localPath);
+                return NextResponse.json({ success: true, message: "Local file deleted" });
+            }
+            return NextResponse.json({ error: "Local file not found" }, { status: 404 });
+        }
+
+        // Case 2: Supabase Storage Deletion
         const urlObj = new URL(filePath);
         const pathParts = urlObj.pathname.split('/storage/v1/object/public/');
         if (pathParts.length < 2) throw new Error("Invalid URL format");
@@ -98,9 +111,9 @@ export async function DELETE(req: NextRequest) {
             .remove([relativePath]);
 
         if (error) throw error;
-        return NextResponse.json({ success: true });
-    } catch (error) {
-        console.error('Supabase delete error:', error);
-        return NextResponse.json({ error: "Delete failed" }, { status: 500 });
+        return NextResponse.json({ success: true, message: "Supabase file deleted" });
+    } catch (error: any) {
+        console.error('Gallery delete error:', error);
+        return NextResponse.json({ error: error.message || "Delete failed" }, { status: 500 });
     }
 }
