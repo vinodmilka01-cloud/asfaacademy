@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Mail, Phone, MapPin, Send, Facebook, Instagram, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Instagram } from "lucide-react";
 
 export default function ContactPage() {
     const [contactInfo, setContactInfo] = useState({
@@ -86,14 +86,8 @@ export default function ContactPage() {
                             <div className="p-8 bg-gray-50 rounded-[2.5rem] border border-gray-100 italic">
                                 <h4 className="font-bold mb-4">Social Media</h4>
                                 <div className="flex gap-4">
-                                    <a href="#" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:bg-primary hover:text-white transition-all">
-                                        <Facebook size={18} />
-                                    </a>
-                                    <a href={contactInfo.instagram} className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:bg-primary hover:text-white transition-all">
+                                    <a href={contactInfo.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:bg-primary hover:text-white transition-all">
                                         <Instagram size={18} />
-                                    </a>
-                                    <a href="#" className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary shadow-sm hover:bg-primary hover:text-white transition-all">
-                                        <Twitter size={18} />
                                     </a>
                                 </div>
                             </div>
