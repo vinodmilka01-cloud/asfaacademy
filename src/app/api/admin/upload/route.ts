@@ -43,15 +43,9 @@ export async function POST(req: NextRequest) {
                 .getPublicUrl(filePath);
 
             return NextResponse.json({ path: publicUrl, name: safeName }, { status: 201 });
-        } catch (supaError) {
-            console.error('Supabase upload failed, using local mock response:', supaError);
-            // Fallback: return a placeholder or local URL if possible
-            // For now, return a placeholder that looks like a public file
-            return NextResponse.json({
-                path: `/${safeName}`,
-                name: safeName,
-                isFallback: true
-            }, { status: 201 });
+        } catch (supaError: any) {
+            console.error('Supabase upload failed:', supaError);
+            return NextResponse.json({ error: supaError.message || "Supabase upload failed" }, { status: 500 });
         }
     } catch (error) {
         console.error('Upload API error:', error);
