@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin, Heart } from "lucide-react";
+import { Instagram, Mail, Phone, MapPin, Heart } from "lucide-react";
 
 export const Footer = () => {
     const [contactInfo, setContactInfo] = useState({
@@ -48,14 +48,8 @@ export const Footer = () => {
                             Academy of Sports and Fine Arts is dedicated to identifying and nurturing sporting talent from underserved communities across India.
                         </p>
                         <div className="flex space-x-4">
-                            <a href="#" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-gray-600">
-                                <Facebook size={18} />
-                            </a>
                             <a href={contactInfo.instagram} className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-gray-600">
                                 <Instagram size={18} />
-                            </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-gray-600">
-                                <Twitter size={18} />
                             </a>
                         </div>
                     </div>
