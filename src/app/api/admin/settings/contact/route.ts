@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { supabase, supabaseAdmin } from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
 
@@ -32,31 +32,40 @@ export async function PUT(req: NextRequest) {
         const body = await req.json();
         const { id, updated_at, ...updateData } = body;
 
+        console.log('Settings PUT: id =', id, '| data =', updateData);
+
         let result;
         if (id) {
-            // Update existing
-            const { data, error } = await supabase
+            // Update existing row
+            const { data, error } = await supabaseAdmin
                 .from('contact_info')
                 .update({ ...updateData, updated_at: new Date().toISOString() })
                 .eq('id', id)
                 .select()
                 .single();
-            if (error) throw error;
+            if (error) {
+                console.error('Supabase UPDATE error:', error);
+                return NextResponse.json({ error: error.message }, { status: 500 });
+            }
             result = data;
         } else {
-            // Insert new if none exists
-            const { data, error } = await supabase
+            // Insert new row if none exists
+            const { data, error } = await supabaseAdmin
                 .from('contact_info')
                 .insert([{ ...updateData, updated_at: new Date().toISOString() }])
                 .select()
                 .single();
-            if (error) throw error;
+            if (error) {
+                console.error('Supabase INSERT error:', error);
+                return NextResponse.json({ error: error.message }, { status: 500 });
+            }
             result = data;
         }
 
         return NextResponse.json(result);
-    } catch (error) {
-        console.error('Supabase update error:', error);
-        return NextResponse.json({ error: "Failed to update contact info" }, { status: 500 });
+    } catch (error: any) {
+        console.error('Settings route error:', error);
+        return NextResponse.json({ error: error.message || "Failed to update contact info" }, { status: 500 });
     }
 }
+
