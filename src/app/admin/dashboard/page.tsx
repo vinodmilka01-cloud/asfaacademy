@@ -87,11 +87,42 @@ export default function AdminDashboard() {
     const [teamUploading, setTeamUploading] = useState(false);
 
     useEffect(() => {
-        fetch("/api/admin/gallery").then(r => { if (r.status === 401) router.push("/admin"); return r.json(); }).then(setUploads).catch(() => { });
-        fetch("/api/admin/updates").then(r => r.json()).then(setUpdates).catch(() => { });
-        fetch("/api/admin/athletes").then(r => r.json()).then(setAthletes).catch(() => { });
-        fetch("/api/admin/team").then(r => r.json()).then(setTeam).catch(() => { });
-        fetch("/api/admin/settings/contact").then(r => r.json()).then(data => { if (data.email) setContactInfo(data); }).catch(() => { });
+        const fetchAll = async () => {
+            try {
+                const resG = await fetch("/api/admin/gallery");
+                if (resG.status === 401) { router.push("/admin"); return; }
+                const uploadsData = await resG.json();
+                setUploads(uploadsData);
+            } catch (e) { console.error("Gallery fetch failed", e); }
+
+            try {
+                const resU = await fetch("/api/admin/updates");
+                const updatesData = await resU.json();
+                if (Array.isArray(updatesData)) setUpdates(updatesData);
+                else throw new Error("Invalid updates data");
+            } catch (e: any) { setUpdatesMsg({ type: "error", text: "Failed to load updates: " + (e.message || "Network error") }); }
+
+            try {
+                const resA = await fetch("/api/admin/athletes");
+                const athletesData = await resA.json();
+                if (Array.isArray(athletesData)) setAthletes(athletesData);
+                else throw new Error("Invalid athletes data");
+            } catch (e: any) { setAthleteMsg({ type: "error", text: "Failed to load athletes: " + (e.message || "Network error") }); }
+
+            try {
+                const resT = await fetch("/api/admin/team");
+                const teamData = await resT.json();
+                if (Array.isArray(teamData)) setTeam(teamData);
+                else throw new Error("Invalid team data");
+            } catch (e: any) { setTeamMsg({ type: "error", text: "Failed to load team: " + (e.message || "Network error") }); }
+
+            try {
+                const resC = await fetch("/api/admin/settings/contact");
+                const contactData = await resC.json();
+                if (contactData && contactData.email) setContactInfo(contactData);
+            } catch (e) { console.error("Contact fetch failed", e); }
+        };
+        fetchAll();
     }, [router]);
 
     const handleLogout = async () => { await fetch("/api/admin/logout", { method: "POST" }); router.push("/admin"); };
@@ -190,7 +221,10 @@ export default function AdminDashboard() {
             else setAthletes(prev => [...prev, saved]);
             cancelAthleteForm();
             setAthleteMsg({ type: "success", text: editingAthlete ? "Athlete updated!" : "Athlete added!" });
-        } else setAthleteMsg({ type: "error", text: "Failed to save." });
+        } else {
+            const err = await res.json();
+            setAthleteMsg({ type: "error", text: err.error || "Failed to save." });
+        }
     };
 
     const handleDeleteAthlete = async (id: string) => {
@@ -222,7 +256,10 @@ export default function AdminDashboard() {
             else setTeam(prev => [...prev, saved]);
             cancelMemberForm();
             setTeamMsg({ type: "success", text: editingMember ? "Member updated!" : "Member added!" });
-        } else setTeamMsg({ type: "error", text: "Failed to save." });
+        } else {
+            const err = await res.json();
+            setTeamMsg({ type: "error", text: err.error || "Failed to save." });
+        }
     };
 
     const handleDeleteMember = async (id: string) => {
