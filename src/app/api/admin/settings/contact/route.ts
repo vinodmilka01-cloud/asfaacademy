@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 
+export const dynamic = "force-dynamic";
+
 function isAuthenticated(req: NextRequest) {
     return req.cookies.get("asfa_admin_session")?.value === "authenticated";
 }

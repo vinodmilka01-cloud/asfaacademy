@@ -4,6 +4,8 @@ import { User } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import Image from "next/image";
 
+export const dynamic = "force-dynamic";
+
 interface TeamMember {
     id: string;
     name: string;
